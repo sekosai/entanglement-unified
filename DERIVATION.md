@@ -22,14 +22,21 @@ from the modular Hamiltonian of the cosmic reduced density matrix.
 The numerical value is consistent with the measured $G$ to within
 current cosmic-parameter uncertainties.
 
-**Scope.** This is *not* a free derivation of $G$. The cosmic inputs
-$R_{\text{universe}}$ and $M_{\text{universe}}$ are themselves
+**Scope.** This is *not* a free or local derivation of $G$. The cosmic
+inputs $R_{\text{universe}}$ and $M_{\text{universe}}$ are themselves
 determined within general-relativistic cosmology and contain $G$
-implicitly. The substantive content is the prediction of the
-prefactor $4/5$ and the mechanism itself, not the numerical value
-of $G$. A cleaner $G$-independent test of the same mechanism — the
-exact derivation of the Bohr magneton at the electron scale — is
-given in `DERIVE_EM.pdf`.
+implicitly. Worse, the same formula evaluated on any local causal patch
+(e.g., Earth) fails by ~36 orders of magnitude — the formula only works
+where $M/R$ is forced by the critical-density condition, which itself
+contains $G$. So the cosmic match is a Mach–Sciama consistency check at
+one scale, not a local statement of $G$. The substantive content is the
+predicted prefactor $4/5$ and the mechanism itself, not the numerical
+value of $G$. A cleaner $G$-independent test of the same mechanism — the
+exact derivation of the Bohr magneton at the electron scale — is given
+in `DERIVE_EM.pdf`. The PDF includes "Alternate Choices of $R$ and $M$,"
+the explicit local Earth-as-patch test, and a "Toward a Local
+Derivation" section pointing at the Jacobson–Padmanabhan–Verlinde
+program.
 
 ---
 

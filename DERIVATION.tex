@@ -213,38 +213,119 @@ mechanism predicts the correct value of $G$ from $G$-free inputs. It
 is evidence that the entanglement mechanism is consistent with the
 Mach--Sciama relation to within the prefactor.
 
+\subsection{Alternate Choices of $\Runiv$ and $\Muniv$}
+
+One might hope to escape the circularity by picking inputs that are
+less $G$-dependent. None of the obvious choices succeed:
+
+\begin{table}[H]
+  \centering
+  \caption[Alternate choices of R and their G-independence.]{Alternate choices of $R$ and their $G$-independence.}
+  \label{tab:R_choices}
+  \begin{tabular}{p{4.4cm}p{3.4cm}p{6cm}}
+    \toprule
+    Choice for $R$ & $G$-independent? & What the claim becomes \\
+    \midrule
+    Particle horizon ($\sim$46 Gly) & No --- Friedmann integral with $G$ inside & Equivalent to the present paper \\
+    Hubble radius $c/H_0$ & Partially --- $H_0$ from redshift-distance is the cleanest & Equivalent to "universe is at critical density" \\
+    CMB last-scattering radius & No --- requires GR perturbation theory to interpret & Buys nothing \\
+    Local causal diamond & Yes in principle & Promising; addressed in Sec.~\ref{sec:local_test} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption[Alternate choices of M and their G-independence.]{Alternate choices of $M$ and their $G$-independence.}
+  \label{tab:M_choices}
+  \begin{tabular}{p{4.4cm}p{3.4cm}p{6cm}}
+    \toprule
+    Choice for $M$ & $G$-independent? & What the claim becomes \\
+    \midrule
+    Baryonic mass only & Partially --- BBN $+$ atomic spectra are largely $G$-free & Predicts wrong $G$ by factor of $\sim 20$ ($\Omega_b \approx 0.049$) \\
+    Baryon $+$ dark matter & No --- DM is gravitationally inferred & Reduces error but stays circular \\
+    Total energy budget & No --- $\rho_c = 3H^2/(8\pi G)$ is explicitly circular & Identity, not derivation \\
+    Komar/ADM/Misner-Sharp & No --- GR mass notions & Inside what we'd derive \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The most revealing entry is "baryonic mass only." If the relation
+$G = (4/5)\, c^2\Runiv/\Muniv$ were a genuine prediction from
+non-gravitational inputs, the value of $\Muniv$ that "works" should
+be the one that comes from non-gravitational measurements (BBN,
+atomic spectra, stellar populations). It isn't. The value that makes
+the relation match $G$ requires including dark matter and dark
+energy, both of which are gravitationally inferred. The match is
+therefore even more circular than the headline calculation suggests:
+most of the mass-energy "input" is itself a $G$-laden output.
+
+\subsection{The Local Test: Earth as a Causal Patch}
+\label{sec:local_test}
+
+The most decisive way to ask whether $G = \gamma\, c^2 R/M$ is a real
+prediction is to apply it to a system that is not the entire
+observable universe. If the relation is a local statement, it should
+hold for any causal patch. Try Earth:
+\begin{align}
+  M_E &= 5.97 \times 10^{24}\;\mathrm{kg}, \\
+  R_E &= 6.37 \times 10^{6}\;\mathrm{m}, \\
+  G_{\mathrm{eff}}^{\mathrm{Earth}} &= \frac{4}{5} \frac{c^2 R_E}{M_E}
+    \approx 7.7 \times 10^{25}\;\mathrm{m^3/(kg\,s^2)}.
+\end{align}
+This is off from the measured $G \approx 6.67 \times 10^{-11}$ by
+roughly \textbf{36 orders of magnitude}. The relation $G = \gamma\,
+c^2 R/M$ is therefore \emph{not} a local prediction. Plug in any
+patch other than the whole universe, and it gives nonsense.
+
+The reason: at the cosmic scale, $\Muniv/\Runiv \approx c^2/(2 G)$
+because the universe sits at critical density --- the very condition
+that contains $G$. The relation works only at the one scale where
+the inputs are forced to satisfy the closure condition that
+contains $G$.
+
+This is the strongest form of the circularity critique: the
+``derivation'' produces the right answer at exactly one scale, the
+one defined by an equation that contains the constant being
+``derived.''
+
 \subsection{What Is and Is Not Claimed}
 
 \textbf{What is claimed:}
 \begin{enumerate}
-  \item There is a physically motivated entanglement mechanism whose
-    cosmic application produces a relation of the form $G = \gamma\,
-    c^2 \Runiv/\Muniv$.
-  \item The prefactor $\gamma = 4/5$ is derived from the modular
-    Hamiltonian of free fermions on a Racah chain at low filling
-    fraction, applied via dimensional reduction to the 3+1D cosmic
-    reduced density matrix.
-  \item The same mechanism, applied at the electron scale where its
-    inputs are $G$-independent, exactly reproduces the Bohr magneton
-    (companion paper).
+  \item There is a physically motivated entanglement mechanism
+    (orthogonal jerk + helical trajectory + bond energy $\hbar c/r$)
+    whose application at the electron Compton scale exactly
+    reproduces the Bohr magneton, with no $G$ as input. This is the
+    only clean numerical test of the mechanism (companion paper).
+  \item The same mechanism, when applied to the cosmic ensemble with
+    the standard $\Lambda$CDM inputs, reproduces the Mach--Sciama
+    relation $G \sim c^2 R/M$ with a specific predicted prefactor
+    $\gamma = 4/5$ derived from the modular Hamiltonian of free
+    fermions on a Racah chain at low filling fraction.
 \end{enumerate}
 
 \textbf{What is not claimed:}
 \begin{enumerate}
-  \item This is not a derivation of $G$ from $G$-free inputs; the
-    cosmic parameters used are not independent of $G$.
-  \item The $0.21\%$ point-estimate match should not be read as a
-    precision result, since $\Runiv$ and $\Muniv$ each carry $5$--$10\%$
-    uncertainty in their own right.
-  \item The mechanism does not, on its own, replace general relativity.
-    What it offers is a candidate explanation for \emph{why} the
-    Mach--Sciama relation should hold, with a specific predicted
-    prefactor.
+  \item This is \emph{not} a derivation of $G$ from $G$-free inputs.
+    The cosmic parameters used are not $G$-independent, and the
+    relation evaluated on any local patch (e.g.~Earth) gives
+    nonsense by $\sim 36$ orders of magnitude.
+  \item The $0.21\%$ point-estimate match between
+    $(4/5) c^2\Runiv/\Muniv$ and the measured $G$ is therefore a
+    consistency check at the one scale where the inputs are forced
+    by the critical-density condition, not a precision prediction.
+  \item The mechanism does not, on its own, replace general
+    relativity, and the present treatment does not constitute a
+    local field-theoretic derivation of Newtonian gravity from
+    entanglement.
 \end{enumerate}
 
-The cleanest test of the mechanism is therefore not the gravity
-calculation, but the Bohr magneton derivation at the electron scale,
-which uses no $G$ at any step.
+The cleanest empirical leg of the program is therefore not this
+gravity paper, but the Bohr magneton derivation at the electron
+scale, which is local, uses no $G$, and matches an experimentally
+measured quantity to high precision. The reader should weight the
+program accordingly.
 
 \section{The Bond Energy $E_{\mathrm{bond}} = \hbar c / r$}
 
@@ -612,14 +693,88 @@ entanglement-energy distribution across the cosmic 3+1D modular
 Hamiltonian) is suggestive but not by itself a derivation; we note
 the parallel as a possible structural connection.
 
+\section{Toward a Local Derivation}
+\label{sec:local_derivation}
+
+Section~\ref{sec:local_test} showed that the cosmic relation
+$G = (4/5)\, c^2 R/M$ is not local. The right next step, if the
+mechanism is to be more than a fit at one scale, is to attempt a
+local derivation in the spirit of the Jacobson--Padmanabhan--Verlinde
+program. We sketch what would be required and what is currently
+missing.
+
+\subsection{The Jacobson Program}
+
+\citet{jacobson1995} showed that Einstein's equation can be derived
+from the Clausius relation $\delta Q = T\,dS$ applied to local
+Rindler horizons, given the Bekenstein--Hawking entropy
+$S = A/(4 \ell_P^2)$. \citet{padmanabhan2010} and \citet{verlinde2011}
+extended this to ``entropic gravity'' programs in which Newtonian
+gravity emerges from local entanglement entropy variation across a
+screen.
+
+Crucially, in all of these programs $G$ enters through the
+\emph{coefficient} of the area law, $1/(4 \ell_P^2)$. None of them
+\emph{derives} the value of $G$; they derive Einstein's equation
+\emph{given} the entropy--area coefficient. The Planck length itself
+contains $G$ by definition ($\ell_P = \sqrt{\hbar G/c^3}$). So the
+deepest known programs of this type still require an external input
+that fixes the gravitational coupling.
+
+\subsection{What a Local Version of Our Mechanism Would Need}
+
+For our specific entanglement-torque mechanism to constitute a local
+derivation of $G$, three things would have to be true:
+
+\begin{enumerate}
+  \item \textbf{A universal entanglement bond density.} There must
+    exist a local quantity --- call it $\eta$, with units of
+    [energy] $\cdot$ [length]$^{-3}$ $\cdot$ [pair]$^{-1}$, or
+    equivalent --- that is the same in every vacuum patch and is
+    determined by QFT alone.
+  \item \textbf{Newtonian acceleration from torque-of-jerk integrated
+    over the patch.} The same orthogonal-jerk $+$ helical-trajectory
+    geometry, summed over the local entanglement structure, must
+    produce $\mathbf{a} = -\nabla\Phi$ with $\nabla^2 \Phi = 4\pi G\,
+    \rho$ in the weak-field limit, with a specific dimensionless
+    proportionality constant that does \emph{not} depend on the
+    patch's size or contents.
+  \item \textbf{$\eta$ computed without $G$.} The crucial step. The
+    entanglement bond density $\eta$ must be derivable from purely
+    QFT inputs (modular Hamiltonians, area-law coefficients) without
+    using $G$ as an input. If $\eta$ requires the Planck length to
+    define its cutoff, the program inherits the same circularity as
+    Jacobson's.
+\end{enumerate}
+
+We can offer (1) and (2) at the level of structural sketch. We do
+\emph{not} have (3), and to our knowledge nobody else does either.
+This is the open problem that, if solved, would convert the present
+program from a consistency check into a derivation.
+
+\subsection{Why the Bohr Magneton Is the Real Local Test}
+
+Although a local derivation of $G$ is an open problem, the same
+mechanism applied at the electron Compton scale produces an exact,
+local, $G$-independent result: $\mu_B = e\hbar/(2 m_e)$ (companion
+paper). This is the real evidence that the mechanism is on solid
+local ground; what's missing is the bridge from ``the mechanism is
+locally real'' to ``the mechanism, applied to the cosmic ensemble,
+fixes $G$.''
+
+The honest position is therefore: the local seed is proven (Bohr
+magneton). The orchard's shape (Mach--Sciama at cosmic scale) is
+consistent with the same seed and with a specific predicted
+prefactor, but does not by itself constitute a derivation of $G$.
+
 \section{Computational Verification}
 
 All derivations are implemented in Python scripts:
 
 \begin{itemize}
-  \item \texttt{derive\_G.py}---Main $G$ derivation (752 lines)
-  \item \texttt{derive\_bond\_energy.py}---$E_{\mathrm{bond}} = \hbar c/r$ derivation (420 lines)
-  \item \texttt{derive\_3d\_extension.py}---3+1D extension via Huerta \& van der Velde (350 lines)
+  \item \texttt{derive\_G.py}---Main $G$ derivation
+  \item \texttt{derive\_bond\_energy.py}---$E_{\mathrm{bond}} = \hbar c/r$ derivation
+  \item \texttt{derive\_3d\_extension.py}---3+1D extension via Huerta \& van der Velde
   \item \texttt{constants.py}---Physical constants and helper functions
 \end{itemize}
 
