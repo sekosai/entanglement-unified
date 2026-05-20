@@ -1,21 +1,29 @@
-# Electromagnetism from Entanglement Torque
+# The Bohr Magneton from Helical-Jerk Geometry: A G-Free Test
+
+> **Authoritative version:** [`DERIVE_EM.pdf`](DERIVE_EM.pdf) is the canonical document. This markdown is an older draft; the PDF supersedes it on framing and scope.
 
 ## Abstract
 
-We show that electromagnetism arises from the same entanglement torque mechanism
-as gravity, operating at the electron mass scale with aligned phase coherence.
-The electromagnetic fine structure constant $\alpha_{\mathrm{em}} \approx 1/137$ and
-the gravitational fine structure constant $\alpha_{\mathrm{grav}} \approx 5.9 \times
-10^{-39}$ are related through the mass ratio and the phase coherence structure:
+The companion paper proposes an entanglement mechanism for the
+Mach–Sciama relation $G \sim c^2 R/M$, but acknowledges that the
+cosmic inputs are not independent of $G$ and the gravity calculation
+is therefore a consistency check rather than a free derivation. Here
+we apply the *same mechanism* at the electron scale, where every
+input is independently measured and $G$ never appears. The mechanism
+predicts that the electron's orthogonal jerk drives a helical
+trajectory at the Compton scale, and that the magnetic moment of
+this trajectory is exactly the Bohr magneton:
 
 $$
-\frac{\alpha_{\mathrm{em}}}{\alpha_{\mathrm{grav}}}
-= \left(\frac{m_p}{m_e}\right)^2 \cdot \mathcal{C}
+\mu_B \;=\; \frac{e \hbar}{2 m_e}.
 $$
 
-where $\mathcal{C}$ is the phase coherence amplification factor. The Bohr magneton
-$\mu_B = e\hbar/(2m_e)$ emerges as the magnetic moment of the electron's helical
-jerk trajectory. Maxwell's equations are the conservation laws of the jerk field.
+This is an exact result with no fitted parameters. As a
+$G$-independent test of the mechanism that powered the gravity paper,
+it is a much cleaner check than the cosmological calculation. We
+then discuss the parallel structure between gravity and
+electromagnetism and the open question of why the per-pair couplings
+differ by 36 orders of magnitude.
 
 ---
 

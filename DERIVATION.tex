@@ -28,7 +28,8 @@
 \newcommand{\Nuniv}{N_{\mathrm{universe}}}
 \newcommand{\av}[1]{\left\langle #1 \right\rangle}
 
-\title{Derivation of Newton's Constant $G$ from Quantum Entanglement}
+\title{An Entanglement Mechanism for the Mach--Sciama Relation:\\
+Newton's Constant from Cosmic Boundary Conditions}
 \author{}
 \date{}
 
@@ -37,19 +38,30 @@
 \maketitle
 
 \begin{abstract}
-We derive Newton's gravitational constant $G$ from the quantum entanglement
-structure of the vacuum, using only the speed of light $c$, the observable
-universe radius $\Runiv$, and the total mass-energy of the universe $\Muniv$.
-The result
+The relation $G \sim c^2 R/M$ between Newton's gravitational constant and
+cosmic boundary conditions is well-known in the Mach--Sciama tradition: in
+any flat critical-density cosmology, $G c^2 = (\text{const}) \cdot c^4 R/M$
+follows from the Friedmann equation. What is \emph{not} explained in standard
+cosmology is \emph{why} the universe should sit at this self-consistency point.
+We propose a quantum entanglement mechanism --- orthogonal jerk creating
+helical trajectories, with bond energy $\hbar c/r$ and torque geometry from
+the Bisognano--Wichmann theorem --- that predicts the specific prefactor
+$\gamma = 4/5$ from the modular Hamiltonian of the cosmic reduced density
+matrix. The relation
 \begin{equation}
-  G = \frac{4}{5} \frac{c^2 \Runiv}{\Muniv}
+  G \;=\; \frac{4}{5}\,\frac{c^2 \Runiv}{\Muniv}
 \end{equation}
-gives $G_{\mathrm{derived}} = 6.688 \times 10^{-11}\, \mathrm{m^3/(kg{\cdot}s^2)}$,
-consistent with the measured value $G_{\mathrm{measured}} = 6.674 \times 10^{-11}$
-to within current uncertainties on the cosmic parameters $\Runiv$ and $\Muniv$
-(each known to roughly $5$--$10\%$). The geometric factor $4/5$ is derived from
-the Racah chain modular Hamiltonian with the cosmic baryon fraction
-$\rho = 0.049$, not assumed. $G$ never appears as an input.
+gives a value consistent with the measured $G$ to within current cosmic
+parameter uncertainties.
+
+\textbf{Scope.} This is not a free derivation of $G$. The cosmic inputs
+$\Runiv$ and $\Muniv$ are themselves determined within general-relativistic
+cosmology and contain $G$ implicitly (Section~\ref{sec:scope}). The
+substantive content is the prediction of the prefactor $4/5$ from the
+modular Hamiltonian, and the mechanism itself, not the numerical value
+of $G$. A cleaner $G$-independent test of the same mechanism, the exact
+derivation of the Bohr magneton at the electron scale, is given in a
+companion paper.
 \end{abstract}
 
 \section{Theoretical Foundation}
@@ -151,6 +163,88 @@ $1/r^2$ potential from the angular Laplacian), yet their modular Hamiltonian
 remains local in the energy density with the \textbf{same weight function} as the
 $d$-dimensional CFT. This is proven for both scalar fields and Dirac fermions
 \citep{huerta2023a, huerta2023b}.
+
+\section{Circularity and Scope}
+\label{sec:scope}
+
+Before presenting the mechanism it is essential to be explicit about
+what this calculation does and does not establish.
+
+\subsection{The Mach--Sciama Relation Is Not Novel}
+
+In a spatially flat universe at critical density, the Friedmann equation
+gives $\rho_c = 3 H^2/(8\pi G)$. The total mass-energy in the Hubble
+volume is then
+\begin{equation}
+  M_H \;=\; \rho_c \cdot \frac{4}{3}\pi R_H^3
+       \;=\; \frac{c^2 R_H}{2 G},
+       \qquad R_H = c/H,
+\end{equation}
+which immediately rearranges to $G = c^2 R_H/(2 M_H)$. A relation of the
+form $G \sim c^2 R/M$ is therefore present in any standard cosmology;
+it has been discussed since Sciama (1953) and is the structural premise
+underlying Brans--Dicke theory and several modern emergent-gravity
+programs. \emph{Reproducing this structural relation is not, by itself,
+new physics.}
+
+\subsection{The Inputs Are Not $G$-Independent}
+
+In standard cosmology, both $\Runiv$ and $\Muniv$ are determined within
+the GR/$\Lambda$CDM framework and depend on $G$:
+
+\begin{itemize}
+  \item $\Runiv$ is the proper distance to the particle horizon, computed
+    from a Friedmann integral that contains $G$ through the matter
+    density. Stellar age estimates (white dwarf cooling, globular cluster
+    main-sequence turn-off) provide a partially $G$-independent age
+    constraint, but the radius $\Runiv = c \cdot t_{\mathrm{age}}$ is at
+    best a kinematic proxy.
+  \item $\Muniv$ in $\Lambda$CDM is set by the closure condition
+    $\Omega_{\mathrm{tot}} = 1$, which contains $G$ explicitly. Dark
+    matter mass is determined by gravitational dynamics, so it cannot
+    be measured independently of $G$. Only the baryonic component
+    ($\Omega_b \approx 0.049$, from BBN and the CMB) is constrained
+    by non-gravitational physics.
+\end{itemize}
+
+The numerical match between $\frac{4}{5} c^2 \Runiv/\Muniv$ and the
+measured $G$ is therefore \emph{not} evidence that the entanglement
+mechanism predicts the correct value of $G$ from $G$-free inputs. It
+is evidence that the entanglement mechanism is consistent with the
+Mach--Sciama relation to within the prefactor.
+
+\subsection{What Is and Is Not Claimed}
+
+\textbf{What is claimed:}
+\begin{enumerate}
+  \item There is a physically motivated entanglement mechanism whose
+    cosmic application produces a relation of the form $G = \gamma\,
+    c^2 \Runiv/\Muniv$.
+  \item The prefactor $\gamma = 4/5$ is derived from the modular
+    Hamiltonian of free fermions on a Racah chain at low filling
+    fraction, applied via dimensional reduction to the 3+1D cosmic
+    reduced density matrix.
+  \item The same mechanism, applied at the electron scale where its
+    inputs are $G$-independent, exactly reproduces the Bohr magneton
+    (companion paper).
+\end{enumerate}
+
+\textbf{What is not claimed:}
+\begin{enumerate}
+  \item This is not a derivation of $G$ from $G$-free inputs; the
+    cosmic parameters used are not independent of $G$.
+  \item The $0.21\%$ point-estimate match should not be read as a
+    precision result, since $\Runiv$ and $\Muniv$ each carry $5$--$10\%$
+    uncertainty in their own right.
+  \item The mechanism does not, on its own, replace general relativity.
+    What it offers is a candidate explanation for \emph{why} the
+    Mach--Sciama relation should hold, with a specific predicted
+    prefactor.
+\end{enumerate}
+
+The cleanest test of the mechanism is therefore not the gravity
+calculation, but the Bohr magneton derivation at the electron scale,
+which uses no $G$ at any step.
 
 \section{The Bond Energy $E_{\mathrm{bond}} = \hbar c / r$}
 
@@ -422,95 +516,87 @@ Comparing to Newton's law $F = G M m / r^2$:
 \textbf{Note:} $\hbar$, $m_p$, and $\kappa$ all cancel. The final expression depends
 only on $c$, $\Runiv$, and $\Muniv$.
 
-\section{Numerical Result}
+\section{Numerical Consistency Check}
 
-Using:
+Using cosmic inputs:
 \begin{align}
   c &= 2.998 \times 10^8 \; \mathrm{m/s} \\
   \Runiv &= 4.4 \times 10^{26} \; \mathrm{m} \\
   \Muniv &= 4.73 \times 10^{53} \; \mathrm{kg}
 \end{align}
-
-The total universe mass-energy includes baryonic matter, dark matter, and
-dark energy, all converted to mass-equivalent via $E = mc^2$. The dark-energy
-contribution enters through its effective rest-mass equivalent in the
-cosmic energy budget; the derivation does not require dark energy to be
-matter-like, only that it contribute to the total energy density.
-
+the predicted relation gives
 \begin{equation}
-  G_{\mathrm{derived}}
+  G_{\mathrm{predicted}}
   = \frac{4}{5} \frac{(2.998 \times 10^8)^2 \cdot (4.4 \times 10^{26})}
                      {4.73 \times 10^{53}}
-  = 6.688 \times 10^{-11} \; \mathrm{m^3/(kg{\cdot}s^2)}
+  = 6.688 \times 10^{-11} \; \mathrm{m^3/(kg{\cdot}s^2)},
   \label{eq:g_derived}
 \end{equation}
+to be compared with $G_{\mathrm{measured}} = 6.674 \times 10^{-11}\;
+\mathrm{m^3/(kg{\cdot}s^2)}$. The ratio is $1.0021$.
 
+This check should be read in the light of Section~\ref{sec:scope}: the
+inputs $\Runiv$ and $\Muniv$ are not independent of $G$, and each carries
+roughly $5$--$10\%$ uncertainty in standard cosmology. The headline
+$0.21\%$ agreement is therefore a consistency check, not a precision
+result. The honest statement is: the predicted prefactor $4/5$, combined
+with the standard cosmic parameters, is consistent with the measured value
+of $G$ to well within those parameter uncertainties.
+
+A genuine prefactor test would require an independent constraint on
+$\Muniv/\Runiv$ that does not pass through $G$. We are not aware of one
+that is currently tight enough to discriminate, say, $4/5$ from $1/2$ or
+$1$ at the few-percent level.
+
+\section{Status of the Predictions}
+
+Honest accounting of what the mechanism currently predicts cleanly,
+predicts structurally, and does not yet predict.
+
+\subsection{Cleanly Predicted (G-Free): Bohr Magneton}
+
+Applied at the electron scale, the same helical-jerk mechanism predicts
 \begin{equation}
-  G_{\mathrm{measured}} = 6.674 \times 10^{-11} \; \mathrm{m^3/(kg{\cdot}s^2)}
-  \label{eq:g_measured}
+  \mu_B = \frac{e \hbar}{2 m_e}
+  \label{eq:bohr_magneton_ref}
 \end{equation}
+exactly, with no fitted parameters and using only $e$, $\hbar$, $m_e$,
+and $c$ --- none of which involve $G$. This is the cleanest test of the
+mechanism and is treated in detail in the companion paper.
 
-\begin{equation}
-  \frac{G_{\mathrm{derived}}}{G_{\mathrm{measured}}} = 1.0021
-  \label{eq:ratio}
-\end{equation}
-
-The point estimate matches to $0.21\%$. This headline figure should not be
-mistaken for a precision claim: $\Runiv$ and $\Muniv$ each carry roughly
-$5$--$10\%$ uncertainty depending on how the observable horizon is defined
-and on the assumed Lambda-CDM parameters. The honest statement is that the
-derivation reproduces the measured value of $G$ to well within the cosmic
-parameter uncertainties, and a more precise determination would require
-tighter cosmological inputs.
-
-\section{Independent Predictions}
-
-\subsection{Frame Dragging}
+\subsection{Structurally Predicted (Quantitatively Off): Frame Dragging}
 
 The boost generator structure (BW theorem) implies that rotating masses
-drag the local entanglement field, producing a Lense--Thirring-like effect.
-The mechanism predicts the correct \emph{structure}: frame dragging is a
-boost effect of the modular flow under rotation, not a separate phenomenon.
+drag the local entanglement field, producing a Lense--Thirring-like
+effect. The mechanism predicts the correct \emph{structure}: frame
+dragging is a boost effect of the modular flow under rotation, not a
+separate phenomenon.
 
-The \emph{quantitative} match is unresolved. A naive collective treatment
-(random walk of $\sqrt{N_{\mathrm{Earth}}}$ nucleons contributing) gives
-a frame-dragging frequency within roughly a factor of $10^3$ of the GR
-prediction $\omega_{\mathrm{FD}}^{\mathrm{GR}} = 2GJ/(c^2 R^3) \approx
-1.9 \times 10^{-14}$ rad/s. Closing this gap requires a more precise
-treatment of how rotation creates the off-line displacement at the
-nucleon level, which is left for future work.
+The \emph{quantitative} match is currently off by roughly a factor of
+$10^3$. A naive collective treatment (random walk of $\sqrt{N_{\mathrm{Earth}}}$
+nucleons) does not reproduce $\omega_{\mathrm{FD}}^{\mathrm{GR}} =
+2GJ/(c^2 R^3) \approx 1.9 \times 10^{-14}$ rad/s. Closing this gap
+requires a more precise treatment of the collective contribution at
+the nucleon level, and is open work.
 
-\subsection{Gravitational Coupling Constant}
+\subsection{Order-of-Magnitude: Dark Energy}
 
-The standard gravitational coupling constant for two protons,
-\begin{equation}
-  \alpha_{\mathrm{grav}}
-  = \frac{G m_p^2}{\hbar c}
-  \approx 5.9 \times 10^{-39},
-  \label{eq:alpha_grav}
-\end{equation}
-follows directly from the derived expression for $G$ together with the
-fundamental constants. In the entanglement framework this coupling is
-not fitted; it is determined by the same cosmic energy balance that
-produces $G$. Modulo the geometric coefficient $\kappa$, the per-pair
-coupling $C$ of \cref{eq:concurrence} reproduces this value.
+The unresolved entanglement field at the cosmic scale gives an energy
+density of order $\rho_{\mathrm{DE}} \approx 8.1 \times 10^{-11}$ J/m$^3$,
+compared to the observed $\rho_{\mathrm{DE}}^{\mathrm{obs}} \approx
+6.9 \times 10^{-10}$ J/m$^3$. The prediction is within an order of
+magnitude. The factor of $\sim 8$ is consistent with the holographic
+picture (dark energy stored on the cosmic horizon, a 2D surface,
+rather than distributed through the bulk volume), but a precise
+holographic accounting is beyond the present scope.
 
-\subsection{Dark Energy Density}
+\subsection{Not a Free Prediction: $\alpha_{\mathrm{grav}}$}
 
-The unresolved entanglement field at the cosmic scale carries an
-energy density of order
-\begin{equation}
-  \rho_{\mathrm{DE}} \approx 8.1 \times 10^{-11} \; \mathrm{J/m^3}
-  \label{eq:rho_de}
-\end{equation}
-compared to the observed value $\rho_{\mathrm{DE}}^{\mathrm{obs}}
-\approx 6.9 \times 10^{-10}$ J/m$^3$. The prediction is within an
-order of magnitude of the measured value. The remaining factor of
-$\sim 8$ is consistent with the holographic picture in which dark
-energy is stored on the cosmic horizon (a 2D surface) rather than
-distributed through the bulk volume; resolving the precise factor
-requires a holographic accounting that is beyond the scope of this
-derivation.
+The standard gravitational coupling
+$\alpha_{\mathrm{grav}} = G m_p^2/(\hbar c) \approx 5.9 \times 10^{-39}$
+follows from the predicted relation for $G$ together with $m_p$, $\hbar$,
+and $c$. It is therefore consistent with the framework but not an
+independent prediction --- it inherits the same circularity as $G$ itself.
 
 \section{Comparison to Kolmogorov's Four-Fifths Law}
 

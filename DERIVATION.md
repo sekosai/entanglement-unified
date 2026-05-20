@@ -1,21 +1,35 @@
-# Derivation of Newton's Constant G from Quantum Entanglement
+# An Entanglement Mechanism for the Mach–Sciama Relation
+
+> **Authoritative version:** [`DERIVATION.pdf`](DERIVATION.pdf) is the canonical document. This markdown is an older draft; the PDF supersedes it on framing and scope.
 
 ## Abstract
 
-We derive Newton's gravitational constant $G$ from the quantum entanglement
-structure of the vacuum, using only the speed of light $c$, the observable
-universe radius $R_{\text{universe}}$, and the total mass-energy of the
-universe $M_{\text{universe}}$. The result:
+The relation $G \sim c^2 R/M$ between Newton's gravitational constant
+and cosmic boundary conditions is the well-known Mach–Sciama identity:
+in any flat critical-density cosmology, $G$ and $c^2 R/M$ are
+algebraically related through the Friedmann equation. What is *not*
+explained in standard cosmology is *why* the universe should sit at
+this self-consistency point. We propose a quantum entanglement
+mechanism — orthogonal jerk creating helical trajectories, with bond
+energy $\hbar c/r$ and torque geometry from the Bisognano–Wichmann
+theorem — that predicts the specific prefactor
 
 $$
-G = \frac{4}{5} \frac{c^2 R_{\text{universe}}}{M_{\text{universe}}}
+G \;=\; \frac{4}{5}\,\frac{c^2 R_{\text{universe}}}{M_{\text{universe}}}
 $$
 
-gives $G_{\text{derived}} = 6.688 \times 10^{-11} \text{ m}^3/(\text{kg}\cdot\text{s}^2)$,
-matching the measured value $G_{\text{measured}} = 6.674 \times 10^{-11}$
-to within 0.21%. The geometric factor $4/5$ is derived from the Racah chain
-modular Hamiltonian with the cosmic filling fraction $\rho = 0.049$, not
-assumed. $G$ never appears as an input.
+from the modular Hamiltonian of the cosmic reduced density matrix.
+The numerical value is consistent with the measured $G$ to within
+current cosmic-parameter uncertainties.
+
+**Scope.** This is *not* a free derivation of $G$. The cosmic inputs
+$R_{\text{universe}}$ and $M_{\text{universe}}$ are themselves
+determined within general-relativistic cosmology and contain $G$
+implicitly. The substantive content is the prediction of the
+prefactor $4/5$ and the mechanism itself, not the numerical value
+of $G$. A cleaner $G$-independent test of the same mechanism — the
+exact derivation of the Bohr magneton at the electron scale — is
+given in `DERIVE_EM.pdf`.
 
 ---
 
