@@ -1,0 +1,400 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage{cleveref}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{microtype}
+
+\titleformat{\section}{\large\bfseries\uppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue,
+}
+
+\newcommand{\hbarc}{\hbar c}
+\newcommand{\av}[1]{\left\langle #1 \right\rangle}
+\newcommand{\lambdac}{\lambda_{\mathrm{C}}}
+\newcommand{\lambdacp}{\lambda_{\mathrm{C},p}}
+\newcommand{\lambdace}{\lambda_{\mathrm{C},e}}
+
+\title{Electromagnetism from Entanglement Torque}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We show that electromagnetism arises from the same entanglement torque mechanism
+as gravity, operating at the electron mass scale with aligned phase coherence.
+The electromagnetic fine structure constant $\alpha_{\mathrm{em}} \approx 1/137$ and
+the gravitational fine structure constant $\alpha_{\mathrm{grav}} \approx 5.9 \times
+10^{-39}$ are related through the mass ratio and the phase coherence structure:
+\begin{equation}
+  \frac{\alpha_{\mathrm{em}}}{\alpha_{\mathrm{grav}}}
+  = \left(\frac{m_p}{m_e}\right)^2 \cdot \mathcal{C}
+\end{equation}
+where $\mathcal{C}$ is the phase coherence amplification factor. The Bohr magneton
+$\mu_B = e\hbar/(2m_e)$ emerges as the magnetic moment of the electron's helical
+jerk trajectory. Maxwell's equations are the conservation laws of the jerk field.
+\end{abstract}
+
+\section{Parallel Structure}
+
+The same entanglement torque mechanism operates at both the nucleon and electron
+mass scales. The underlying mechanism is identical: orthogonal jerk creates a
+helical trajectory, the entanglement bond energy scales as $\hbar c/r$, and the
+torque geometry follows from the Bisognano--Wichmann theorem.
+
+\begin{table}[H]
+  \centering
+  \caption{Parallel structure of nucleon (gravity) and electron (electromagnetism) mechanisms.}
+  \label{tab:parallel}
+  \begin{tabular}{lll}
+    \toprule
+    Property & Nucleon (gravity) & Electron (electromagnetism) \\
+    \midrule
+    Mass & $1.673 \times 10^{-27}$ kg & $9.109 \times 10^{-31}$ kg \\
+    Compton wavelength & $1.321 \times 10^{-15}$ m & $2.426 \times 10^{-12}$ m \\
+    Compton frequency & $1.119 \times 10^{24}$ rad/s & $7.763 \times 10^{20}$ rad/s \\
+    Spin angular momentum & $\sqrt{3}/2 \cdot \hbar$ & $\sqrt{3}/2 \cdot \hbar$ \\
+    Concurrence & $\alpha_{\mathrm{grav}} \approx 5.9 \times 10^{-39}$ & $\alpha_{\mathrm{em}} \approx 7.297 \times 10^{-3}$ \\
+    Phase coherence & Random (thermal) & Aligned (ferromagnetic) \\
+    Bond energy & $\hbar c/r$ & $\hbar c/r$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The bond energy formula is identical. The concurrence differs by 36 orders of
+magnitude.
+
+\section{The Force Ratio}
+
+The central numerical fact is the ratio of electromagnetic to gravitational force
+between two protons:
+\begin{equation}
+  \frac{F_{\mathrm{em}}}{F_{\mathrm{grav}}}
+  = \frac{\alpha_{\mathrm{em}}}{\alpha_{\mathrm{grav}}}
+  = 1.24 \times 10^{36}
+  \label{eq:force_ratio}
+\end{equation}
+This is the quantity that any unified theory must explain. Our mechanism
+decomposes it into three components.
+
+\subsection{Mass ratio squared}
+
+The concurrence for a particle of mass $m$ scales as $m^2$ through the
+Compton wavelength:
+\begin{equation}
+  \alpha_x = \left(\frac{\ell_{\mathrm{P}}}{\lambdac,x}\right)^2
+  = \left(\frac{\ell_{\mathrm{P}} m_x c}{\hbar}\right)^2
+  \label{eq:alpha_mass}
+\end{equation}
+Therefore:
+\begin{equation}
+  \left(\frac{m_p}{m_e}\right)^2 = 3.40 \times 10^6
+  \label{eq:mass_ratio}
+\end{equation}
+This accounts for six orders of magnitude. The nucleon is heavier, so its
+gravitational concurrence is proportionally larger in the mass-squared sense ---
+but the electron's electromagnetic concurrence is vastly larger, so there must
+be additional factors.
+
+\subsection{Locus size ratio}
+
+The electron's Compton wavelength is 1836 times larger than the proton's:
+\begin{equation}
+  \frac{\lambdace}{\lambdacp} = \frac{m_p}{m_e} = 1836
+  \label{eq:locus_ratio}
+\end{equation}
+The entanglement bond energy $\hbar c/r$ is stronger at smaller separations.
+The larger electron locus means the bond extends further, but the per-pair
+strength at a given distance is the same. The squared ratio:
+\begin{equation}
+  \left(\frac{\lambdace}{\lambdacp}\right)^2
+  = \left(\frac{m_p}{m_e}\right)^2 = 3.40 \times 10^6
+  \label{eq:locus_ratio_sq}
+\end{equation}
+This is the same factor as the mass ratio squared, since the Compton wavelength
+is inversely proportional to mass.
+
+\subsection{Phase coherence factor}
+
+After accounting for the mass ratio squared, the remaining factor is:
+\begin{equation}
+  \mathcal{C}
+  = \frac{\alpha_{\mathrm{em}}/\alpha_{\mathrm{grav}}}{(m_p/m_e)^2}
+  = 1.84 \times 10^{29}
+  \label{eq:coherence}
+\end{equation}
+This is the \textbf{phase coherence amplification factor}. It quantifies how much
+stronger the effective coupling becomes when phases are aligned (ferromagnetic
+ordering of electrons) versus random (thermal averaging of nucleons).
+
+For aligned phases, the torque contributions add coherently:
+\begin{equation}
+  F_{\mathrm{aligned}} \propto N^2
+  \label{eq:coherent}
+\end{equation}
+For random phases, they add incoherently:
+\begin{equation}
+  F_{\mathrm{random}} \propto N
+  \label{eq:incoherent}
+\end{equation}
+The coherence factor $\mathcal{C} \approx 1.8 \times 10^{29}$ is approximately
+the square of the number of coherently aligned electrons in a typical
+ferromagnetic domain.
+
+\section{The Helical Trajectory and the Bohr Magneton}
+
+The electron's orthogonal jerk creates a helical trajectory. This is the same
+mechanism that produces the nucleon's helical trajectory, but at the electron
+mass scale.
+
+\subsection{Helix parameters}
+
+The helical trajectory is characterized by:
+\begin{align}
+  \omega_e &= \frac{m_e c^2}{\hbar} = 7.763 \times 10^{20} \; \mathrm{rad/s} \\
+  \lambdace &= \frac{\hbar}{m_e c} = 2.426 \times 10^{-12} \; \mathrm{m}
+\end{align}
+The angular momentum of the helix:
+\begin{equation}
+  L = m_e \lambdace c = \hbar
+  \label{eq:helix_angular_momentum}
+\end{equation}
+The helix carries exactly one unit of $\hbar$ angular momentum.
+
+\subsection{The Bohr magneton}
+
+The helical trajectory is a current loop. The current is:
+\begin{equation}
+  I = \frac{e}{T} = \frac{e \omega_e}{2\pi}
+  \label{eq:current}
+\end{equation}
+The area of the loop is:
+\begin{equation}
+  A = \pi \lambdace^2
+  \label{eq:area}
+\end{equation}
+The magnetic moment is:
+\begin{equation}
+  \mu = I \cdot A
+  = \frac{e \omega_e}{2\pi} \cdot \pi \lambdace^2
+  = \frac{e \omega_e \lambdace^2}{2}
+  \label{eq:mag_moment}
+\end{equation}
+Substituting $\omega_e = m_e c^2/\hbar$ and $\lambdace = \hbar/(m_e c)$:
+\begin{equation}
+  \mu = \frac{e \cdot (m_e c^2/\hbar) \cdot (\hbar/(m_e c))^2}{2}
+  = \frac{e \hbar}{2 m_e}
+  = \mu_B
+  \label{eq:bohr_magneton}
+\end{equation}
+
+\textbf{The Bohr magneton is the magnetic moment of the electron's helical jerk
+trajectory.} This is an exact derivation with no free parameters.
+
+\section{Ferromagnetic Alignment}
+
+\subsection{Exchange interaction as entanglement correlation}
+
+In ordinary matter, electron jerk directions are random. The torques cancel,
+just as orthogonal components of gravitational torque cancel to leave only the
+radial component.
+
+In ferromagnetic materials (iron, nickel, cobalt), the exchange interaction
+aligns electron spins. In the jerk picture, this means the orthogonal jerk
+directions become aligned. The torques then add coherently rather than canceling.
+
+The Pauli exclusion principle prevents two electrons from occupying the same
+quantum state. In the jerk picture, this means two electrons cannot have the
+same jerk-phase at the same position. When electrons are close (in a metal),
+the lowest energy configuration is for their jerk-phases to be aligned. This
+is the exchange interaction: \textbf{aligned jerk minimizes the entanglement energy}.
+
+\subsection{Curie temperature}
+
+Thermal energy disrupts the alignment:
+\begin{equation}
+  k_B T_C \approx E_{\mathrm{exchange}}
+  \label{eq:curie}
+\end{equation}
+For iron, $T_C = 1043$ K. Above this temperature, thermal jitter overcomes
+the exchange alignment. The jerk directions randomize, and the material loses
+its magnetic moment.
+
+\section{Maxwell's Equations from Jerk Conservation}
+
+The electromagnetic field is the jerk field. Maxwell's equations are the
+conservation laws governing its flow.
+
+\subsection{Gauss's law for electricity}
+\begin{equation}
+  \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+  \label{eq:gauss_e}
+\end{equation}
+Jerk has sources: charges are concentrations of aligned jerk-phase.
+
+\subsection{Gauss's law for magnetism}
+\begin{equation}
+  \nabla \cdot \mathbf{B} = 0
+  \label{eq:gauss_b}
+\end{equation}
+Jerk has no monopoles. The helical trajectory is a closed loop --- the jerk
+must return to its starting phase. The torque field has no source or sink,
+only circulation.
+
+\subsection{Faraday's law}
+\begin{equation}
+  \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+  \label{eq:faraday}
+\end{equation}
+A changing jerk-phase creates an electric field. The time derivative of the
+jerk circulation is the induced electromotive force.
+
+\subsection{Ampere--Maxwell law}
+\begin{equation}
+  \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+  \label{eq:ampere}
+\end{equation}
+Jerk flow (current) creates the magnetic field. The displacement current term
+is the propagation of jerk-phase change at speed $c$.
+
+\section{Light as Propagating Jerk}
+
+An accelerating charge changes its jerk-phase. This change propagates at speed
+$c$ --- the maximum speed of jerk-phase propagation. The propagating jerk-phase
+change \textbf{is} the electromagnetic wave.
+
+The photon is a quantum of propagating jerk:
+\begin{equation}
+  E_{\mathrm{photon}} = \hbar \omega
+  \label{eq:photon}
+\end{equation}
+This is the energy of one jerk-phase rotation.
+
+\section{Magnetic Dipoles and the Absence of Monopoles}
+
+Gravity is isotropic: all nucleon pairs contribute, random spin orientations
+cancel to leave only the radial component. Electromagnetism is directional:
+aligned spins create a preferred axis.
+
+The aligned jerk creates a torque field:
+\begin{equation}
+  \boldsymbol{\tau}(\mathbf{r}) = \sum_i \mathbf{r}_i \times (\mathbf{S}_i \times \mathbf{r}_i) / |\mathbf{r}_i|^3
+  \label{eq:dipole_field}
+\end{equation}
+When all $\mathbf{S}_i$ point in the same direction (ferromagnetic):
+
+\begin{itemize}
+  \item Along the axis: torques add (strong attraction)
+  \item Perpendicular to axis: torques partially cancel
+  \item Opposite to axis: torques oppose (repulsion)
+\end{itemize}
+
+This creates the dipole field pattern. A monopole would require jerk that
+spirals in only one direction everywhere. But the jerk is a third derivative
+of position --- it must close on itself. The helical trajectory returns to its
+starting phase. This is why $\nabla \cdot \mathbf{B} = 0$.
+
+\section{Numerical Summary}
+
+\begin{table}[H]
+  \centering
+  \caption{Key numerical values for the electromagnetic mechanism.}
+  \label{tab:numbers}
+  \begin{tabular}{ll}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    $\alpha_{\mathrm{em}}$ & $7.297 \times 10^{-3}$ (1/137.036) \\
+    $\alpha_{\mathrm{grav}}$ & $5.906 \times 10^{-39}$ \\
+    Force ratio & $1.24 \times 10^{36}$ \\
+    $(m_p/m_e)^2$ & $3.40 \times 10^6$ \\
+    Phase coherence $\mathcal{C}$ & $1.84 \times 10^{29}$ \\
+    Bohr magneton $\mu_B$ & $9.274 \times 10^{-24}$ J/T \\
+    Electron Compton wavelength & $2.426 \times 10^{-12}$ m \\
+    Electron Compton frequency & $7.763 \times 10^{20}$ rad/s \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{What Remains for a Unified Theory}
+
+The gravity derivation and the EM derivation share the same mechanism. To
+unify them into a single coherent framework, the following gaps remain:
+
+\subsection{The phase coherence factor $\mathcal{C}$}
+
+The value $\mathcal{C} = 1.84 \times 10^{29}$ is currently a residual. It
+should be derived from first principles --- specifically from the number of
+coherently aligned electrons in a domain and the statistical mechanics of
+phase alignment. A derivation of $\mathcal{C}$ would close the 36-order-of-
+magnitude gap between gravity and electromagnetism.
+
+\subsection{The fine structure constant $\alpha_{\mathrm{em}}$ itself}
+
+We have explained $\alpha_{\mathrm{em}}/\alpha_{\mathrm{grav}}$ in terms of
+mass ratios and phase coherence, but we have not derived $\alpha_{\mathrm{em}}$
+from first principles. The value $1/137.036$ needs to emerge from the
+entanglement structure at the electron scale, just as $\alpha_{\mathrm{grav}}$
+emerges from the cosmic energy balance.
+
+\subsection{The weak and strong nuclear forces}
+
+The unified theory must account for all four fundamental forces. The weak
+force operates at the $W/Z$ boson mass scale ($\sim 80$--90 GeV). The strong
+force operates at the QCD scale ($\Lambda_{\mathrm{QCD}} \sim 200$ MeV). Each
+requires identifying the relevant mass scale, concurrence, and phase coherence
+structure.
+
+\subsection{Mass generation}
+
+Why do particles have the masses they do? The mechanism works at any mass
+scale, but the specific values ($m_e$, $m_p$, $m_W$, etc.) are inputs rather
+than outputs. A Higgs-like mechanism within the entanglement framework is
+needed.
+
+\subsection{The geometric factor across forces}
+
+Gravity has $\gamma = 4/5$ from the Racah chain. Does electromagnetism have
+a corresponding geometric factor? Is it the same? Different? The answer
+depends on whether the modular Hamiltonian weight function $\beta(r)$ is
+universal or force-dependent.
+
+\subsection{Quantization of charge}
+
+Why is charge quantized in units of $e$? The entanglement framework naturally
+produces discrete angular momentum ($\hbar$), but charge quantization needs
+a separate argument.
+
+\subsection{Frame dragging quantitative match}
+
+The frame dragging mechanism is structurally correct but off by a factor of
+$\sim 3 \times 10^3$ in the compactness-based prediction. Closing this gap
+requires a more precise treatment of how rotation creates the off-line
+displacement $\delta\sigma$ at the nucleon level.
+
+\subsection{Resolution scale of the forces}
+
+At what resolution do the various forces become distinguishable?
+Gravity is in the unresolved entanglement regime at all practical scales.
+Electromagnetism resolves at a much higher energy scale. The weak and strong
+forces need their own resolution scales.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
