@@ -1,6 +1,10 @@
-"""constants.py -- physical constants shared across all gravity experiments.
+"""constants.py -- physical constants shared across the entanglement papers.
 
-G is NOT defined here. It is derived, not assumed. See derive_G.py.
+G is not hardcoded here as a fundamental input; it is computed in
+derive_G.py from the cosmic Mach-Sciama relation with the predicted
+prefactor 4/5. The value G_MEASURED below is for verification, not
+derivation. See DERIVATION.tex for the scope discussion: this is not
+a free local derivation of G, only a one-scale consistency check.
 """
 from __future__ import annotations
 
@@ -65,22 +69,33 @@ def nucleon_count(mass: float) -> float:
     return mass / M_P
 
 
+GAMMA_PREFACTOR = 4.0 / 5.0  # forced by Racah-chain modular Hamiltonian
+                              # at low filling fraction (see DERIVATION.tex)
+
+
 def concurrence_from_cosmic(M_universe: float = M_UNIVERSE_TOTAL,
                              R_universe: float = R_UNIVERSE) -> float:
-    """Derive concurrence from cosmic energy balance.
+    """Per-pair entanglement coupling from cosmic energy balance.
 
-    E_entanglement = E_mass
-    3/4 * N^2 * concurrence * hbar*c / R = M * c^2
-    concurrence = (4/3) * (m_p^2 * c * R) / (M * hbar)
+    Solves: total_entanglement_energy = total_mass_energy * c^2
+    with weight gamma=4/5 on the modular Hamiltonian.
+
+    NOTE: 'concurrence' here means the per-pair coupling C in the bond
+    energy E_pair = C * hbar*c / r. This is not the Wootters concurrence
+    of two-qubit entanglement.
     """
-    return (4/3) * (M_P**2 * C * R_universe) / (M_universe * HBAR)
+    return GAMMA_PREFACTOR * (M_P**2 * C * R_universe) / (M_universe * HBAR)
 
 
 def G_from_cosmic(M_universe: float = M_UNIVERSE_TOTAL,
                    R_universe: float = R_UNIVERSE) -> float:
-    """Derive G from cosmic parameters.
+    """Compute G from the cosmic Mach-Sciama relation with prefactor 4/5.
 
-    G = (4/3) * c^2 * R_universe / M_universe
-    (4/3 is the spherical geometry correction)
+    G = (4/5) * c^2 * R_universe / M_universe
+
+    NOT a local derivation of G. Plugging in any non-cosmic R, M (e.g.
+    Earth) gives nonsense by ~36 orders of magnitude. The relation is a
+    consistency check at the cosmic scale where M/R is forced by the
+    critical-density condition.
     """
-    return (4/3) * C**2 * R_universe / M_universe
+    return GAMMA_PREFACTOR * C**2 * R_universe / M_universe

@@ -288,8 +288,8 @@ def main() -> None:
     log("    If the free fermion approximation were wrong, we would not")
     log("    expect this agreement at the nucleon scale. The fact that")
     log("    hbar*c/r gives the correct energy scale at BOTH the nucleon")
-    log("    scale (200 MeV) and the cosmic scale (G derivation) is")
-    log("    independent confirmation of the universal 1/r scaling.")
+    log("    scale (200 MeV) and the cosmic scale (Mach-Sciama relation)")
+    log("    is independent confirmation of the universal 1/r scaling.")
     log("")
 
     # =========================================================================

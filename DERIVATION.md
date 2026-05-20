@@ -506,7 +506,7 @@ sufficient to carry the shape of gravity, not enough to claim the whole.
 
 All derivations are implemented in Python scripts:
 
-- `derive_G.py` -- Main G derivation (752 lines)
+- `derive_G.py` -- Main cosmic-Mach-Sciama prefactor calculation (752 lines)
 - `derive_bond_energy.py` -- $E_{\text{bond}} = \hbar c/r$ derivation (420 lines)
 - `derive_3d_extension.py` -- 3+1D extension via Huerta & van der Velde (350 lines)
 - `constants.py` -- Physical constants and helper functions

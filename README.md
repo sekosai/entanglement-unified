@@ -6,7 +6,9 @@ An entanglement-torque mechanism applied across all four fundamental forces. The
 
 **The clean empirical test is the Bohr magneton.** Applied at the electron Compton scale, the helical-jerk mechanism reproduces `μ_B = eℏ/(2mₑ)` exactly, with no fitted parameters and no `G`. Inputs are `e`, `ℏ`, `mₑ`, `c` — all measured independently to high precision. This is the strongest leg of the program and the only one where every input is `G`-free.
 
-**The cosmic relation is *not* a local derivation of `G`.** A relation of the form `G ∼ c²R/M` is the well-known Mach–Sciama identity; it follows from the Friedmann equation and contains `G` implicitly through the cosmic inputs. We add a specific predicted prefactor, `γ = 4/5`, derived from the modular Hamiltonian of free fermions on a Racah chain at low filling fraction. Combined with the standard cosmic parameters, this is consistent with the measured `G` to within current parameter uncertainties — but evaluated on any local causal patch (e.g., Earth) the same formula gives `G_eff ∼ 10²⁶`, off by 36 orders of magnitude. So the cosmic match is a consistency check at the one scale where `M/R` is forced by the critical-density condition, not a local statement of `G`. The gravity paper makes this explicit.
+**The cosmic relation is a boundary-condition statement, not a local law.** `G ∼ c²R/M` is the well-known Mach–Sciama identity. We add a specific predicted prefactor, `γ = 4/5`, derived from the Racah-chain modular Hamiltonian at low filling fraction — and we make the case that, conditional on identifying the cosmic ensemble with a low-filling fermionic state, the prefactor is *forced* (not fitted). The vacuum CHM weight, by contrast, gives `γ = 16/15`, which would be wrong by 33%. So `4/5` distinguishes between two universal CFT regimes; the cosmic regime identification is the load-bearing physics step.
+
+Applied to any local causal patch (e.g., Earth) the same formula gives `G_eff ∼ 10²⁶`, off by 36 orders of magnitude. The right reading is *not* "the formula fails locally" but "the formula is a cosmic boundary-condition relation, not a local field equation." A local theory of gravity from the same mechanism would require a separate Jacobson–Padmanabhan–Verlinde-style derivation from local causal horizons. We don't have it; nobody else has it either, and we're explicit that this is the open problem.
 
 **The other forces are sketches.** The weak and strong sectors are structurally parallel but quantitatively dependent on inputs (W mass, QCD scale) that are themselves measured rather than derived. Mass generation, charge quantization, and frame dragging are organizational analogies or open problems, not quantitative predictions, and the documents say so explicitly.
 
@@ -55,8 +57,8 @@ python3 derive_unified.py
 
 Active work-in-progress. Comments and disagreement welcome — particularly on:
 
-1. The prefactor `γ = 4/5` derivation from the Racah-chain modular Hamiltonian.
+1. The identification of the cosmic ensemble with a Racah-chain low-filling state. This is the load-bearing physics step that makes `γ = 4/5` forced rather than chosen. (The arithmetic from the weight to `4/5` is rigorous; the regime identification is the part that could be wrong.)
 2. The EFT justification for applying free-fermion modular Hamiltonians at cosmic scales.
 3. Any proposal for a local derivation of `G` that computes the entanglement bond density without using `G` as an input.
 
-The Bohr magneton derivation is the empirical anchor. The rest is honest about what is sketch, what is consistency check, and what is genuinely open.
+The Bohr magneton derivation is the empirical anchor — same mechanism, no `G`, no fitted parameters, no cosmic inputs, exact result. The gravity paper is best read as: *given the mechanism that produces the Bohr magneton, here is what it predicts about cosmic boundary conditions, and here is what would be needed to make it a local law.*

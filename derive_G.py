@@ -1,7 +1,17 @@
-"""derive_G.py -- forward derivation of Big G from entanglement modular Hamiltonian.
+"""derive_G.py -- entanglement mechanism for the Mach-Sciama relation.
 
-Derives G = 6.67430e-11 m^3/(kg*s^2) from QFT entanglement structure.
-G appears only at the end as a prediction to verify, never as an input.
+Computes the prefactor gamma in G = gamma * c^2 * R_universe / M_universe
+from the entanglement-torque mechanism (orthogonal jerk + helical
+trajectory + bond energy hbar*c/r) and shows that the Racah-chain
+modular Hamiltonian at low filling fraction forces gamma = 4/5.
+
+NOT a free derivation of G. The cosmic inputs R_universe and M_universe
+are themselves G-dependent in standard cosmology (see DERIVATION.tex
+Section 'Circularity and Scope'). The substantive content is the
+prefactor 4/5 and the mechanism itself, not the numerical value of G.
+A clean G-independent test of the same mechanism (the Bohr magneton
+at the electron Compton scale) is in derive_3d_extension.py and
+DERIVE_EM.tex.
 
 Theoretical foundation:
   The entanglement bond energy E ~ hbar*c/r between two nucleons is not an
@@ -634,8 +644,8 @@ def main() -> None:
     log("")
     log("    This ratio is the same factor of {:.2f} that appears in".format(
         G_derived / G_MEASURED))
-    log("    the G derivation -- it is the geometric correction factor")
-    log("    from the modular Hamiltonian framework.")
+    log("    the cosmic Mach-Sciama calculation -- it is the geometric")
+    log("    correction factor from the modular Hamiltonian framework.")
     log("")
     log("    The concurrence is determined by the cosmic energy balance,")
     log("    not by G. The identity alpha_grav = (l_p/lambda_C)^2 is a")

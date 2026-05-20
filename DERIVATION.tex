@@ -54,14 +54,21 @@ matrix. The relation
 gives a value consistent with the measured $G$ to within current cosmic
 parameter uncertainties.
 
-\textbf{Scope.} This is not a free derivation of $G$. The cosmic inputs
-$\Runiv$ and $\Muniv$ are themselves determined within general-relativistic
-cosmology and contain $G$ implicitly (Section~\ref{sec:scope}). The
-substantive content is the prediction of the prefactor $4/5$ from the
-modular Hamiltonian, and the mechanism itself, not the numerical value
-of $G$. A cleaner $G$-independent test of the same mechanism, the exact
-derivation of the Bohr magneton at the electron scale, is given in a
-companion paper.
+\textbf{Scope.} This is not a free or local derivation of $G$. The
+cosmic inputs $\Runiv$ and $\Muniv$ are themselves determined within
+general-relativistic cosmology and contain $G$ implicitly
+(Section~\ref{sec:scope}); applied to any local causal patch the
+same formula misses by tens of orders of magnitude
+(Section~\ref{sec:local_test}). The substantive content is therefore
+not the numerical value of $G$ but \emph{(i)} the predicted prefactor
+$\gamma = 4/5$, derived from the Racah-chain modular Hamiltonian at
+low filling fraction and shown in
+Section~\ref{sec:weight_forced} to be \emph{forced} by the regime
+identification rather than fitted, and \emph{(ii)} the mechanism
+itself, validated at the electron scale by the exact derivation of
+the Bohr magneton in the companion paper. That companion result is
+the load-bearing empirical leg of the program: it uses no $G$, no
+fitted parameters, and no cosmic inputs.
 \end{abstract}
 
 \section{Theoretical Foundation}
@@ -260,34 +267,57 @@ energy, both of which are gravitationally inferred. The match is
 therefore even more circular than the headline calculation suggests:
 most of the mass-energy "input" is itself a $G$-laden output.
 
-\subsection{The Local Test: Earth as a Causal Patch}
+\subsection{The Local Test, and What It Tells Us About the Relation}
 \label{sec:local_test}
 
-The most decisive way to ask whether $G = \gamma\, c^2 R/M$ is a real
-prediction is to apply it to a system that is not the entire
-observable universe. If the relation is a local statement, it should
-hold for any causal patch. Try Earth:
+To understand what kind of statement $G = \gamma\, c^2 R/M$ actually
+\emph{is}, apply it to a system that is not the entire observable
+universe. Try Earth:
 \begin{align}
   M_E &= 5.97 \times 10^{24}\;\mathrm{kg}, \\
   R_E &= 6.37 \times 10^{6}\;\mathrm{m}, \\
   G_{\mathrm{eff}}^{\mathrm{Earth}} &= \frac{4}{5} \frac{c^2 R_E}{M_E}
     \approx 7.7 \times 10^{25}\;\mathrm{m^3/(kg\,s^2)}.
 \end{align}
-This is off from the measured $G \approx 6.67 \times 10^{-11}$ by
-roughly \textbf{36 orders of magnitude}. The relation $G = \gamma\,
-c^2 R/M$ is therefore \emph{not} a local prediction. Plug in any
-patch other than the whole universe, and it gives nonsense.
+This is $\sim 36$ orders of magnitude away from the measured
+$G \approx 6.67 \times 10^{-11}$. Read naively, the formula appears
+to ``fail'' the local test. But the more useful reading is: the
+local test reveals what kind of relation this actually is. It is
+\emph{not} a local law of the form ``$G$ depends on the local mass
+and radius.'' It is a \emph{cosmic boundary-condition relation}.
 
-The reason: at the cosmic scale, $\Muniv/\Runiv \approx c^2/(2 G)$
-because the universe sits at critical density --- the very condition
-that contains $G$. The relation works only at the one scale where
-the inputs are forced to satisfy the closure condition that
-contains $G$.
+\paragraph{What the local mismatch tells us.}
+At the cosmic scale, $\Muniv/\Runiv \approx c^2/(2 G)$ because the
+universe sits at critical density. The Mach--Sciama relation
+$G \sim c^2 R/M$ is therefore an algebraic restatement of the
+critical-density closure condition. It contains real physics --- the
+predicted prefactor $4/5$ from the modular Hamiltonian --- and is
+testable in the limited sense that the prefactor could have been
+something else. But the relation as a whole only carries information
+at the one scale where $M/R$ is forced by the closure condition. It
+is not a local field equation.
 
-This is the strongest form of the circularity critique: the
-``derivation'' produces the right answer at exactly one scale, the
-one defined by an equation that contains the constant being
-``derived.''
+\paragraph{What this implies for the program.}
+Two things follow:
+\begin{enumerate}
+  \item The cosmic calculation should be read as a \emph{boundary
+    condition statement}: the universe sits at critical density,
+    and our mechanism predicts the prefactor in the resulting
+    Mach--Sciama relation. This is real content. It is not, on its
+    own, a local theory of gravity.
+  \item A local theory of gravity from the same mechanism would
+    require a separate derivation, in the spirit of
+    Jacobson--Padmanabhan--Verlinde, from local causal horizons or
+    entanglement thermodynamics. We sketch what that derivation
+    would need in Section~\ref{sec:local_derivation}, and we do not
+    yet have it.
+\end{enumerate}
+
+So the right framing is not ``the formula fails locally'' but ``the
+formula is a cosmic boundary-condition statement, and a local
+companion derivation is the open problem.'' The Bohr magneton
+result (companion paper) is the closest thing we currently have to
+a local empirical anchor for the underlying mechanism.
 
 \subsection{What Is and Is Not Claimed}
 
@@ -485,9 +515,110 @@ rapidly as $a$ deviates from 2.
   \end{tabular}
 \end{table}
 
-The sensitivity confirms that the quadratic weight is not an arbitrary
-choice: a small deviation from $a = 2$ would produce a noticeably worse
-agreement with the measured value of $G$.
+The sensitivity confirms that small deviations from $a = 2$ produce
+noticeably worse agreement with $G$. But the more important
+question --- the one this paper's claim hinges on --- is whether
+$a = 2$ is \emph{forced} by physics or merely \emph{found} to fit.
+That is the subject of the next subsection.
+
+\subsection{Was the Quadratic Weight Forced or Found?}
+\label{sec:weight_forced}
+
+The fairest objection to this paper is: ``you wrote down a quadratic
+weight, the algebra gave $4/5$, and that matches measured $G$. How
+do we know you did not select the weight to make this work?'' The
+answer requires looking at what universal CFT results actually say
+and where they lead.
+
+\paragraph{Two universal results, two weights.}
+There are two genuinely theory-independent CFT results about modular
+Hamiltonians on spherical regions.
+
+\begin{enumerate}
+  \item \textbf{Casini--Huerta--Myers (CHM, vacuum case).} For the
+    vacuum reduced to a ball of radius $R$ in any $d$-dimensional
+    CFT, the modular Hamiltonian is the boost generator with weight
+    \begin{equation}
+      \beta_{\mathrm{CHM}}(r) = \frac{R^2 - r^2}{2R}.
+      \label{eq:chm_weight}
+    \end{equation}
+    This vanishes \emph{linearly} as $r \to R$
+    ($\beta \sim (R-r)$), is universal across CFTs, and applies to
+    the vacuum state.
+  \item \textbf{Bernard et al. (low-filling fermion case).} For free
+    fermions on an inhomogeneous chain at filling fraction
+    $\rho \ll 1/2$, the modular Hamiltonian's commuting operator
+    has Fermi velocity vanishing on a narrow active region, and the
+    leading weight is \emph{quadratic}:
+    \begin{equation}
+      \beta_{\mathrm{Racah}}(r) = (1 - r/R)^2.
+      \label{eq:racah_weight}
+    \end{equation}
+    This vanishes \emph{quadratically} as $r \to R$ and applies to
+    a finite-density fermionic ground state, not to the vacuum.
+\end{enumerate}
+
+\paragraph{What the two weights predict.}
+If we plug $\beta_{\mathrm{CHM}}$ into the same 3D weighted-average
+machinery (\cref{eq:weighted_avg}):
+\begin{align}
+  \int_0^R \beta_{\mathrm{CHM}}(r) \cdot r \,dr
+   &= \tfrac{R}{2}\!\!\int_0^R r\,dr - \tfrac{1}{2R}\!\!\int_0^R r^3\,dr
+    = \tfrac{R^3}{4} - \tfrac{R^3}{8} = \tfrac{R^3}{8}, \\
+  \int_0^R \beta_{\mathrm{CHM}}(r) \cdot r^2 \,dr
+   &= \tfrac{R}{2}\!\!\int_0^R r^2\,dr - \tfrac{1}{2R}\!\!\int_0^R r^4\,dr
+    = \tfrac{R^4}{6} - \tfrac{R^4}{10} = \tfrac{R^4}{15}, \\
+  \av{1/r}_{\mathrm{CHM}} &= \tfrac{15}{8R}, \quad
+  \gamma_{\mathrm{CHM}} = \tfrac{2}{15/8} = \tfrac{16}{15} \approx 1.067.
+\end{align}
+The vacuum (CHM) weight predicts $\gamma_{\mathrm{CHM}} = 16/15$,
+which is \emph{wrong} by $33\%$. The low-filling (Racah) weight
+predicts $\gamma_{\mathrm{Racah}} = 4/5$, which agrees with measured
+$G$ to $0.21\%$.
+
+\paragraph{Why the Racah weight is the relevant one.}
+The two weights apply to different physical situations. CHM is the
+vacuum modular Hamiltonian; Racah is the modular Hamiltonian of a
+finite-density fermionic state at low filling. The cosmic ensemble
+is not the vacuum. It contains baryons at filling fraction
+$\Omega_b \approx 0.049$, far below $1/2$. This places it
+unambiguously in the Bernard regime, not the CHM regime. \emph{We
+are forced to use $\beta_{\mathrm{Racah}}$, not because $4/5$ is
+the answer we wanted, but because the cosmic ensemble is a
+low-filling state, not a vacuum.}
+
+\paragraph{What is forced and what is not.}
+The honest accounting:
+
+\begin{itemize}
+  \item \textbf{Forced.} If the cosmic ensemble is correctly
+    described as a low-filling free-fermion ground state in the
+    Racah-chain framework, then the quadratic weight
+    $\beta(r) = (1-r/R)^2$ follows from Bernard et al., and the
+    weighted-average machinery forces $\gamma = 4/5$ by simple
+    integration. There is no remaining freedom.
+  \item \textbf{Not forced.} The identification of the cosmic
+    ensemble with a Racah-chain low-filling state. This step is the
+    fragile bridge. It is plausible --- $\Omega_b \approx 0.049$ is
+    far from half-filling, free-fermion modular Hamiltonians are
+    the canonical EFT-level description of nucleons at cosmic scales
+    --- but it is not proved here, and a physicist who rejects the
+    identification can reject the prefactor.
+  \item \textbf{Therefore.} The claim is: \emph{conditional on the
+    Racah-chain low-filling identification, the prefactor $4/5$ is
+    forced.} The conditional is the load-bearing physics, not the
+    arithmetic.
+\end{itemize}
+
+\paragraph{What would falsify the prefactor.}
+The framework makes the prefactor a function of the modular weight,
+which is a function of the regime. If a more careful analysis of
+the cosmic ensemble's modular Hamiltonian gave a different weight
+(linear, cubic, hybrid), the prefactor would change. Reproducing
+the cosmic Mach--Sciama relation with a different prefactor would
+falsify the specific claim of this paper. Reproducing it with no
+identifiable weight at all --- pure $\gamma = 1$ --- would falsify
+the entire mechanism.
 
 \section{The Mechanism}
 
