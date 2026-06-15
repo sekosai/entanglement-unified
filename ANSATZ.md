@@ -617,6 +617,26 @@ gravitationally inferred total mass. No purely $G$-free $(R, M)$ pair reproduces
 measured $G$; the closest is within $\sim 3\times$. These evaluations are
 reproduced in `gfree_inputs.py`.
 
+**Why $8/5$, and why it is not a circumference.** It is tempting to read the
+overshoot as a hidden $2\pi$ — a stray circumference $2\pi r$ in the geometry.
+It is not. The factorization is exactly $8/5 = 2 \times (4/5)$, and the extra
+$2$ is the **Schwarzschild** factor, the same $2$ as in $R_H = 2GM/c^2$: at
+critical density the Hubble radius *is* the Schwarzschild radius of the mass it
+encloses. Equivalently it is the $2$ separating Einstein's coupling $8\pi G$
+from the Newtonian Poisson coefficient $4\pi G$ ($8\pi G = 2\cdot 4\pi G$). The
+angular factors cancel cleanly — the $4\pi$ of the sphere volume against the
+$4\pi$ inside the Friedmann $8\pi$ — so **no $\pi$ survives** and there is no
+$2\pi r$ (verified symbolically in `verify_symbolic.py`). Notably, the
+mechanism's *own* factor of $2\pi$ — the Bisognano–Wichmann/Unruh normalization
+$K = 2\pi\int x\,T_{00}$ — cancels out of the cosmic prefactor along with
+$\hbar$, $m_p$, and $\kappa$, so it does **not** source this Schwarzschild $2$.
+The two would only meet through the local derivation (§8): in the Jacobson
+construction the gravitational $8\pi$ factorizes the *other* way, as
+$(2\pi)_{\text{Unruh}} \times 4_{\text{Bekenstein}}$, so reconciling the
+mechanism's Unruh $2\pi$ with the gravitational coupling is precisely the
+bond-density problem left open there. The $8/5$ is a clean diagnostic, not a
+clue to a missing geometric factor.
+
 ---
 
 ## 7. Predictions and Falsifiability

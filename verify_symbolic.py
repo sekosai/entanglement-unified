@@ -113,6 +113,24 @@ def main() -> int:
           f"G depends only on {sorted(map(str, G_expr.free_symbols))}")
     all_ok &= cancelled
 
+    # --- 4. The 8/5 overshoot at Hubble radius + critical density ----------
+    print("\n[4] Hubble radius @ critical density: G_pred = (8/5) G (Schwarzschild 2)")
+    G_newton, H0, pi = sp.symbols("G_newton H0 pi", positive=True)  # pi kept symbolic
+    R_H = c / H0
+    rho_crit = 3 * H0**2 / (8 * pi * G_newton)   # Friedmann 8*pi*G
+    V_H = sp.Rational(4, 3) * pi * R_H**3         # sphere volume (4/3) pi R^3
+    M_H = rho_crit * V_H
+    # Schwarzschild relation: the 4*pi solid angle cancels the 8*pi, leaving 2.
+    schwarz = sp.simplify(c**2 * R_H / M_H / G_newton)
+    all_ok &= check("c^2 R_H / M_H = 2G (Schwarzschild)", schwarz, 2)
+    ratio = sp.simplify(sp.Rational(4, 5) * c**2 * R_H / M_H / G_newton)
+    all_ok &= check("G_pred/G = 8/5 = 2*(4/5)", ratio, sp.Rational(8, 5))
+    # The decisive point: pi does NOT survive -> no 2*pi*r circumference.
+    no_pi = pi not in ratio.free_symbols
+    print(f"  [{'PASS' if no_pi else 'FAIL'}] pi cancels (no 2*pi*r circumference): "
+          f"8/5 free of pi = {no_pi}")
+    all_ok &= no_pi
+
     print("\n" + "=" * 60)
     print("RESULT:", "ALL CHECKS PASSED" if all_ok else "SOME CHECKS FAILED")
     return 0 if all_ok else 1

@@ -98,6 +98,7 @@ The ansatz rests on five independent results from quantum field theory
 and conformal field theory.
 
 \subsection{Bisognano--Wichmann Theorem (1975/1976)}
+\label{sec:bw}
 
 The modular Hamiltonian for a half-space in relativistic QFT is the generator
 of Lorentz boosts perpendicular to the entangling surface:
@@ -319,6 +320,30 @@ the particle horizon (about $3.2\times$ larger than the Hubble radius) with the
 gravitationally inferred total mass. No purely $G$-free $(R, M)$ pair reproduces
 the measured $G$; the closest is within a factor of $\sim 3$. All of these
 evaluations are reproduced in \texttt{gfree\_inputs.py}.
+
+\paragraph{Why $8/5$, and why it is not a circumference.}
+It is tempting to read the overshoot as a hidden $2\pi$ --- a stray
+circumference $2\pi r$ lurking in the geometry. It is not. The factorization is
+exactly $8/5 = 2 \times (4/5)$, and the extra $2$ is the \emph{Schwarzschild}
+factor, the same $2$ as in $R_H = 2GM/c^2$: at critical density the Hubble
+radius \emph{is} the Schwarzschild radius of the mass it encloses. Equivalently
+it is the $2$ that separates Einstein's coupling $8\pi G$ from the Newtonian
+Poisson coefficient $4\pi G$, since $8\pi G = 2 \cdot 4\pi G$. The angular
+factors cancel cleanly --- the $4\pi$ of the sphere volume against the $4\pi$
+inside the Friedmann $8\pi$ --- so \emph{no $\pi$ survives} and there is no
+$2\pi r$; this cancellation is verified symbolically in
+\texttt{verify\_symbolic.py}. Notably, the mechanism's \emph{own} factor of
+$2\pi$ --- the Bisognano--Wichmann/Unruh normalization $K = 2\pi\int x\,T_{00}$
+(Section~\ref{sec:bw}) --- cancels out of the cosmic prefactor along with
+$\hbar$, $m_p$, and $\kappa$ (the cancellation below
+Eq.~\eqref{eq:final_g}); it therefore does \emph{not} source this Schwarzschild
+$2$. The two would only meet through the local derivation of
+Section~\ref{sec:local_derivation}: in the Jacobson construction the
+gravitational $8\pi$ factorizes the \emph{other} way, as
+$(2\pi)_{\mathrm{Unruh}} \times 4_{\mathrm{Bekenstein}}$, so reconciling the
+mechanism's Unruh $2\pi$ with the gravitational coupling is precisely the
+bond-density problem left open there. The $8/5$ is thus a clean diagnostic, not
+a clue to a missing geometric factor.
 
 \subsection{The Local Test, and What It Tells Us About the Relation}
 \label{sec:local_test}
