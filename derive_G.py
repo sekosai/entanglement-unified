@@ -60,8 +60,6 @@ Theoretical foundation:
        vacuum energy at scale r is bounded by ~hbar*c/r
      - Bekenstein bound: information at scale r corresponds to energy
        E_bit = hbar*c*ln(2)/(2*pi*r)
-     - Kolmogorov four-fifths law: energy cascade in turbulence scales as 4/5,
-       the same coefficient as the entanglement cascade across cosmic scales
 
   Reference: Bernard et al., "Entanglement Hamiltonian and orthogonal polynomials",
   arXiv:2412.12021 (2024), published in Nuclear Physics B (2025).
@@ -83,7 +81,7 @@ Derivation chain (G never appears as input):
           where kappa is the geometric coefficient (order unity, ~4*pi in 3+1D)
   Step C: Torque geometry -- BW theorem: modular flow = Lorentz boost
   Step D: Cosmic balance -- isotropic background cancels, anisotropy remains
-  Step E: Concurrence from budget constraint across N_universe partners
+  Step E: Coupling fraction from budget constraint across N_universe partners
   Step F: Universe mass-energy = total entanglement energy
   Step G: G emerges as (4/5) * c^2 * R_universe / M_universe
   Step H: Geometric factor derivation from Racah chain
@@ -103,7 +101,7 @@ from constants import (
     M_UNIVERSE_TOTAL, R_UNIVERSE,
     FRACTION_BARYONIC, FRACTION_DARK_MATTER, FRACTION_DARK_ENERGY,
     S_12, LAMBDA_C_P, OMEGA_COMPTON_P, ALPHA_EM,
-    G_MEASURED, nucleon_count, concurrence_from_cosmic, G_from_cosmic,
+    G_MEASURED, nucleon_count, coupling_fraction_from_cosmic, G_from_cosmic,
 )
 
 _log_path = Path(__file__).with_suffix(".log")
@@ -325,15 +323,15 @@ def main() -> None:
     log("  (same as the bond force -- consistent)")
     log("")
     log("  This is the FULL force. The measured force is smaller by")
-    log("  the concurrence factor, which quantifies how much of the")
+    log("  the coupling fraction factor, which quantifies how much of the")
     log("  angular momentum budget s is allocated to this pair.")
     log("")
-    log("  The concurrence is the fraction of s allocated:")
-    log("    concurrence = s_pair / s")
-    log("  Therefore: s_pair = concurrence * s")
+    log("  The coupling fraction is the fraction of s allocated:")
+    log("    coupling fraction = s_pair / s")
+    log("  Therefore: s_pair = coupling fraction * s")
     log("")
     log("  The weighted force per pair:")
-    log("    F_pair_weighted = concurrence * kappa * hbar * c / r^2")
+    log("    F_pair_weighted = coupling fraction * kappa * hbar * c / r^2")
     log("")
 
     # =========================================================================
@@ -384,31 +382,31 @@ def main() -> None:
     log("")
 
     # =========================================================================
-    # STEP E: Concurrence from the budget constraint
+    # STEP E: Coupling fraction from the budget constraint
     # =========================================================================
     log("STEP E: CONCURRENCE FROM BUDGET CONSTRAINT")
     log("=" * 55)
     log("")
-    log("  The concurrence between two nucleons is the fraction of")
+    log("  The coupling fraction between two nucleons is the fraction of")
     log("  the angular momentum budget allocated to their bond.")
     log("")
     log("  The budget constraint for one nucleon:")
-    log("    sum over all partners of (concurrence_ij * s) <= s")
-    log("    sum over all partners of (concurrence_ij) <= 1")
+    log("    sum over all partners of (coupling fraction_ij * s) <= s")
+    log("    sum over all partners of (coupling fraction_ij) <= 1")
     log("")
-    log("  If all pairs have the same concurrence (isotropic baseline):")
-    log("    N_universe * concurrence <= 1")
-    log("    concurrence <= 1 / N_universe")
+    log("  If all pairs have the same coupling fraction (isotropic baseline):")
+    log("    N_universe * coupling fraction <= 1")
+    log("    coupling fraction <= 1 / N_universe")
     log("")
     conc_isotropic = 1 / N_universe
-    log(f"    concurrence (isotropic) = {conc_isotropic:.6e}")
+    log(f"    coupling fraction (isotropic) = {conc_isotropic:.6e}")
     log("")
-    log("  But this is the isotropic baseline. The actual concurrence")
+    log("  But this is the isotropic baseline. The actual coupling fraction")
     log("  is determined by the total entanglement energy of the")
     log("  universe. The universe's mass-energy is stored as")
     log("  entanglement energy across all nucleon pairs:")
     log("")
-    log("    E_entanglement = sum over all pairs of (concurrence * kappa*hbar*c / r_ij)")
+    log("    E_entanglement = sum over all pairs of (coupling fraction * kappa*hbar*c / r_ij)")
     log("")
     log("  The modular Hamiltonian weight beta(r) determines the average 1/r.")
     log("  For the Racah chain with low filling fraction (rho = 0.049), the")
@@ -429,19 +427,19 @@ def main() -> None:
     log("  <1/r> = (R^2/12) / (R^3/30) = 30/(12R) = 5/(2R)")
     log("")
     log("  Total entanglement energy:")
-    log("    E_total = N_universe^2 / 2 * concurrence * kappa*hbar*c * <1/r>")
-    log("            = N_universe^2 / 2 * concurrence * kappa*hbar*c * 5/(2*R_universe)")
-    log("            = 5/4 * N_universe^2 * concurrence * kappa*hbar*c / R_universe")
+    log("    E_total = N_universe^2 / 2 * coupling fraction * kappa*hbar*c * <1/r>")
+    log("            = N_universe^2 / 2 * coupling fraction * kappa*hbar*c * 5/(2*R_universe)")
+    log("            = 5/4 * N_universe^2 * coupling fraction * kappa*hbar*c / R_universe")
     log("")
     log("  This must equal the universe's mass-energy:")
     log("    E_total = M_universe * c^2")
     log("")
-    log("  Solving for concurrence:")
-    log("    concurrence = (4/5) * (M_universe * c^2 * R_universe)")
+    log("  Solving for coupling fraction:")
+    log("    coupling fraction = (4/5) * (M_universe * c^2 * R_universe)")
     log("                       / (kappa * N_universe^2 * hbar * c)")
     log("")
     log("  Substituting N_universe = M_universe / m_p:")
-    log("    concurrence = (4/5) * (m_p^2 * c * R_universe)")
+    log("    coupling fraction = (4/5) * (m_p^2 * c * R_universe)")
     log("                       / (kappa * M_universe * hbar)")
     log("")
 
@@ -456,31 +454,31 @@ def main() -> None:
         G_pred = conc * KAPPA * HBAR * C / M_P**2
         log(f"    {label}:")
         log(f"      M_universe = {M_univ:.3e} kg")
-        log(f"      concurrence = {conc:.6e}")
+        log(f"      coupling fraction = {conc:.6e}")
         log(f"      G_derived = {G_pred:.6e}")
         log(f"      G/G_measured = {G_pred / G_MEASURED:.4f}")
     log("")
 
     # =========================================================================
-    # STEP F: G emerges from concurrence
+    # STEP F: G emerges from coupling fraction
     # =========================================================================
     log("STEP F: G EMERGES FROM CONCURRENCE")
     log("=" * 55)
     log("")
     log("  The force per nucleon pair is:")
-    log("    F_pair = concurrence * kappa * hbar * c / r^2")
+    log("    F_pair = coupling fraction * kappa * hbar * c / r^2")
     log("")
     log("  The total force between two masses M and m at distance r:")
-    log("    F = N_M * N_m * concurrence * kappa * hbar * c / r^2")
-    log("      = (M/m_p) * (m/m_p) * concurrence * kappa * hbar * c / r^2")
+    log("    F = N_M * N_m * coupling fraction * kappa * hbar * c / r^2")
+    log("      = (M/m_p) * (m/m_p) * coupling fraction * kappa * hbar * c / r^2")
     log("")
-    log("  Substituting concurrence = (4/5) * (m_p^2 * c * R_univ) / (kappa * M_univ * hbar):")
+    log("  Substituting coupling fraction = (4/5) * (m_p^2 * c * R_univ) / (kappa * M_univ * hbar):")
     log("    F = (M*m/m_p^2) * [(4/5) * (m_p^2*c*R_univ)/(kappa*M_univ*hbar)] * (kappa*hbar*c) / r^2")
     log("    F = (4/5) * M * m * (c^2 * R_universe / M_universe) / r^2")
     log("")
     log("  Note: kappa cancels out. The geometric coefficient from the")
     log("  modular Hamiltonian appears in both the bond energy and the")
-    log("  concurrence, and they cancel exactly.")
+    log("  coupling fraction, and they cancel exactly.")
     log("")
     log("  Comparing to Newton's law F = G*M*m/r^2:")
     log("    G = (4/5) * c^2 * R_universe / M_universe")
@@ -600,8 +598,8 @@ def main() -> None:
     log("")
     log("    Predicted from the mechanism:")
     log("    The orthogonal residual torque per nucleon pair:")
-    log("    tau_orth = concurrence * kappa * hbar * c / R_earth")
-    conc_total = concurrence_from_cosmic(M_UNIVERSE_TOTAL)
+    log("    tau_orth = coupling fraction * kappa * hbar * c / R_earth")
+    conc_total = coupling_fraction_from_cosmic(M_UNIVERSE_TOTAL)
     tau_orth = conc_total * KAPPA * HBAR * C / R_EARTH
     log(f"    tau_orth = {tau_orth:.6e} N*m")
     log("")
@@ -628,11 +626,11 @@ def main() -> None:
     log("  I.2: GRAVITATIONAL FINE STRUCTURE CONSTANT")
     log("  " + "-" * 55)
     log("")
-    log("    The gravitational fine structure constant is the concurrence")
+    log("    The gravitational fine structure constant is the coupling fraction")
     log("    between two nucleons:")
     log("")
     conc_with_kappa = (4/5) * (M_P**2 * C * R_UNIVERSE) / (KAPPA * M_UNIVERSE_TOTAL * HBAR)
-    log(f"    alpha_grav = concurrence = {conc_with_kappa:.6e}")
+    log(f"    alpha_grav = coupling fraction = {conc_with_kappa:.6e}")
     log("")
     log("    The standard definition uses the Planck length and Compton")
     log("    wavelength:")
@@ -647,7 +645,7 @@ def main() -> None:
     log("    the cosmic Mach-Sciama calculation -- it is the geometric")
     log("    correction factor from the modular Hamiltonian framework.")
     log("")
-    log("    The concurrence is determined by the cosmic energy balance,")
+    log("    The coupling fraction is determined by the cosmic energy balance,")
     log("    not by G. The identity alpha_grav = (l_p/lambda_C)^2 is a")
     log("    consequence, not a definition.")
     log("")
@@ -713,7 +711,6 @@ def main() -> None:
     log("    - Racah chain: quadratic weight from low filling fraction")
     log("    - Dimension-independent: same scaling in 1+1D and 3+1D")
     log("    - Supporting: Casimir effect, QEIs, Bekenstein bound")
-    log("    - Kolmogorov four-fifths law: same 4/5 in turbulence cascade")
     log("    - Ref: Bernard et al., arXiv:2412.12021 (2024)")
     log("")
     log("  Mechanism:")
@@ -727,8 +724,8 @@ def main() -> None:
     log("")
     log("  Key algebraic steps:")
     log("    E_entanglement = E_mass  (cosmic energy balance)")
-    log("    -> concurrence = (4/5) * (m_p^2 * c * R_univ) / (kappa * M_univ * hbar)")
-    log("    -> F = N_pairs * concurrence * kappa * hbar * c / r^2")
+    log("    -> coupling fraction = (4/5) * (m_p^2 * c * R_univ) / (kappa * M_univ * hbar)")
+    log("    -> F = N_pairs * coupling fraction * kappa * hbar * c / r^2")
     log("    -> kappa cancels -> G = (4/5) * c^2 * R_universe / M_universe")
     log("    (hbar, m_p, and kappa all cancel)")
     log("")
@@ -743,7 +740,7 @@ def main() -> None:
     log("")
     log("  Independent predictions:")
     log("    - Frame dragging: boost generator structure (BW theorem)")
-    log("    - Fine structure: alpha_grav = concurrence = {:.3e}".format(conc_with_kappa))
+    log("    - Fine structure: alpha_grav = coupling fraction = {:.3e}".format(conc_with_kappa))
     log("    - Dark energy: polite pass field at rho ~ {:.1e} J/m^3".format(rho_DE))
     log("")
     log("  G is the geometric consequence of the modular Hamiltonian")

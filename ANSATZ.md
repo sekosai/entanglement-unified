@@ -145,11 +145,18 @@ $$
 For the Racah chain (most general case), the inverse temperature $\beta(x)$
 is parabolic. When the filling fraction is low ($\rho \ll 1/2$), the active
 region of the Fermi velocity is small and concentrated near the boundary.
-The modular Hamiltonian weight on this region becomes quadratic:
+The modular Hamiltonian weight on this region is quadratic to leading order:
 
 $$
 \beta(r) = (1 - r/R)^2
 $$
+
+This $(1-r/R)^2$ form is established for *specific integrable free-fermion
+chains* as the leading term in the low-filling limit; it is not a general
+theorem about arbitrary low-density states. Carrying it over to the cosmic
+ensemble requires the separate (and unproven) identification discussed in §3.1
+— "$\Omega_b \approx 0.049$ is small" is necessary but not sufficient
+justification.
 
 Reference: Bernard et al., "Entanglement Hamiltonian and orthogonal polynomials,"
 arXiv:2412.12021 (2024), published in Nuclear Physics B (2025).
@@ -204,6 +211,16 @@ $$
 This is the universal scaling: the entanglement energy between two subsystems
 at separation $L$ is $\hbar c/L$, up to a dimensionless coefficient.
 
+**Region entanglement vs. pairwise bonds (a genuine leap).** The modular
+Hamiltonian describes the entanglement of a *region* with its *complement* — it
+is not, on its face, a sum of pairwise bonds between particles. The derivation
+below (§§4–5) nonetheless decomposes the cosmic entanglement into pairwise terms
+$C\,\kappa\hbar c/r$ summed over nucleon pairs. That decomposition is an
+*assumption*, not a theorem: it is the ansatz that the region-level modular
+structure can be repackaged as additive two-body bonds with the same $\hbar c/r$
+scaling. It is plausible for a dilute, weakly-correlated ensemble, but it is not
+derived from the modular Hamiltonian.
+
 ### 2.2 Why Free Fermions Apply to Nucleons
 
 The Bernard et al. calculation works with free fermions. Nucleons interact via
@@ -219,9 +236,14 @@ the strong force. Why does the free fermion result apply?
 3. **Bernard et al. is a verification, not an assumption:** It confirms the
    universal structure in a concrete solvable model.
 
-4. **EFT argument:** At cosmic scales, only massless degrees of freedom matter.
-   Detailed QCD physics is integrated out and appears only in the normalization,
-   not in the $1/r$ scaling.
+4. **EFT argument (with a caveat):** The long-wavelength behavior is controlled
+   by the effectively massless low-energy sector, and the $1/r$ scaling depends
+   only on dimensions. But integrating out QCD does *not* turn nucleons into free
+   fermions — they remain massive composite particles with residual
+   interactions. The free-fermion modular Hamiltonian is used as a tractable
+   *model* of the low-filling sector (justified by points 1–2, where structure
+   and scaling are theory-independent), not as a claim that nucleons are
+   literally non-interacting.
 
 5. **Cross-check:** At the nucleon scale ($r \sim 1$ fm), $\hbar c/r \sim 200$ MeV,
    matching $\Lambda_{\text{QCD}}$. This agreement at both nucleon and cosmic
@@ -264,7 +286,19 @@ $\rho = \Omega_b \approx 0.049 \ll 1/2$. This is the single physics step that
 selects the low-filling weight $(1 - r/R)^2$ — and hence $\gamma = 4/5$ — over
 the vacuum weight, which would give $16/15$ (§3.3). We do not derive it from
 first principles; it is the conjecture on which the whole result rests and where
-the argument is most vulnerable.
+the argument is most vulnerable. It decomposes into three separate, individually
+unproven leaps:
+
+1. *Why fermionic?* The cosmic reduced density matrix contains bosons (photons,
+   gluons, Higgs, gravitons) as well as fermions; we have no argument for why a
+   free-*fermion* model should approximate its modular Hamiltonian.
+2. *Why $\Omega_b$ sets the filling?* The matter fraction
+   $\Omega_m \approx 0.31$ (also below $1/2$) or another parameter would be at
+   least as defensible; the specific mapping to the Racah parameters
+   $x_1, x_2, x_3$ is not derived.
+3. *Why the Racah chain?* It is the most general *integrable* free-fermion
+   chain, but the universe is not an integrable spin chain; we do not justify
+   integrability at cosmic scales beyond tractability.
 
 - *What would support it:* a derivation of why the cosmic ensemble is fermionic
   and low-filling, why $\Omega_b$ (rather than $\Omega_{\text{total}}$) sets the
@@ -389,9 +423,9 @@ the partner. This is the "torque geometry" of entanglement.
 
 ### 4.3 Unresolved Entanglement
 
-When the concurrence between two particles is far below unity, the pair
+When the coupling fraction between two particles is far below unity, the pair
 has not collapsed to a definite correlation. The entanglement amplitude
-still exists but remains unresolved. For gravity, the concurrence is
+still exists but remains unresolved. For gravity, the coupling fraction is
 $\alpha_{\mathrm{grav}} \approx 5.9 \times 10^{-39}$, so essentially all
 nucleon pairs are in this unresolved regime.
 
@@ -435,9 +469,9 @@ orthogonally to the displacement toward the partner.
 
 The isotropic background cancels. Only anisotropy remains.
 
-### Step E: Concurrence from Energy Balance
+### Step E: Coupling Fraction from Energy Balance
 
-The concurrence $C$ (entanglement strength per pair) is determined by the
+The coupling fraction $C$ (entanglement strength per pair) is determined by the
 total entanglement energy of the universe. The universe's mass-energy is stored
 as entanglement energy across all nucleon pairs:
 
@@ -451,6 +485,13 @@ Equating to the universe's mass-energy $M_{\text{universe}} c^2$:
 $$
 \frac{N_{\text{universe}}^2}{2} \cdot C \cdot \kappa \hbar c \cdot \frac{5}{2R} = M_{\text{universe}} c^2
 $$
+
+**This is a constraint, not a dynamical law.** This equality is the weakest step
+in the chain: it is *imposed* ("the universe's mass-energy equals its total
+pairwise entanglement energy"), not derived from an equation of motion. It is in
+the spirit of holographic equipartition, but we do not derive it. A reader who
+does not grant the matching condition does not get $C$ or the force law that
+follows; supplying its dynamical justification is part of the open problem (§8).
 
 Solving for $C$ and substituting $N_{\text{universe}} = M_{\text{universe}}/m_p$:
 
@@ -635,11 +676,26 @@ cosmic prefactor have local analogues that should determine $\eta$:
 3. the torque/boost geometry (BW theorem), which fixes the orthogonal projection
    that survives the isotropic average.
 
-**What is missing.** To close the loop one must compute the link density per unit
-area $\eta$ from $\beta(r)$ and $E_{\text{bond}}$ for a *local* causal horizon
-(not the cosmic sphere) and show it reproduces $G = c^3/(4\hbar\eta)$ at the
-measured value using no cosmic inputs. We do not have this calculation; neither
-does anyone else. It is the central open problem. The honest status of this paper
+**A concrete attempt (and where it fails).** To make the gap concrete rather
+than a sketch, take the area law $S = \eta\,k_B\,\mathcal{A}$ and suppose the
+horizon is threaded by entanglement links each carrying $\sim k_B \ln 2$, with
+areal density set by a single cutoff length $\ell$, so $\eta \sim \ln 2/\ell^2$.
+Then $G = c^3/(4\hbar\eta)$ gives $G \sim c^3\ell^2/(4\hbar\ln 2)$, and demanding
+the measured $G$ *fixes the cutoff* at
+
+$$
+\ell^2 \sim \frac{4\hbar G \ln 2}{c^3} = 4\ln 2\,\ell_P^2
+\quad\Longrightarrow\quad \ell \sim \ell_P = \sqrt{\hbar G/c^3}.
+$$
+
+This is exactly where it breaks: getting the right $G$ requires the link density
+to be the Planck density, but $\ell_P$ contains $G$ by definition. We have not
+computed $\eta$ from $G$-free inputs; we have re-expressed $G$ via a cutoff that
+already encodes it — the same circularity that defeats the
+Jacobson–Padmanabhan–Verlinde programs at the area-law coefficient. A genuine
+derivation needs an independent, $G$-free determination of $\ell$ or $\eta$
+(e.g. a finite, regulator-independent entanglement entropy density of the
+relevant QFT), which we do not have. Neither does anyone else. It is the central open problem. The honest status of this paper
 is: *given a mechanism that is exact and $G$-free at the electron scale (the
 Empirical Anchor) and that fixes the cosmic prefactor (§§3–6), the missing piece
 is the local bond density $\eta$ that would turn the cosmic consistency check

@@ -354,8 +354,8 @@ def main() -> None:
     log("")
     log(f"  The entanglement energy is {ratio:.2e} times larger than the")
     log(f"  gravitational binding energy. This is consistent with the")
-    log(f"  concurrence factor:")
-    log(f"    concurrence = E_grav / E_bond = {1/ratio:.6e}")
+    log(f"  coupling fraction factor:")
+    log(f"    coupling fraction = E_grav / E_bond = {1/ratio:.6e}")
     log("")
 
     # At nucleon scale
@@ -388,7 +388,7 @@ def main() -> None:
 
     ratio_earth = E_earth / E_grav_earth
     log(f"  Ratio: E_bond / E_grav = {ratio_earth:.6e}")
-    log(f"  Concurrence: {1/ratio_earth:.6e}")
+    log(f"  Coupling fraction: {1/ratio_earth:.6e}")
     log("")
 
     # =========================================================================
@@ -439,7 +439,7 @@ def main() -> None:
     log("  The numerical verification confirms:")
     log("    - At nucleon scale (1 fm): E_bond ~ 200 MeV (strong force scale)")
     log("    - At cosmic scale (R_universe): E_bond ~ 10^{-47} J")
-    log("    - The ratio E_bond/E_grav gives the concurrence factor")
+    log("    - The ratio E_bond/E_grav gives the coupling fraction factor")
     log("")
 
     # =========================================================================

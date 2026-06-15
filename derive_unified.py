@@ -27,7 +27,7 @@ from constants import (  # noqa: E402
     M_UNIVERSE_TOTAL, R_UNIVERSE,
     M_EARTH, R_EARTH, J_EARTH,
     LAMBDA_C_P, LAMBDA_C_E, OMEGA_COMPTON_P, S_12,
-    nucleon_count, concurrence_from_cosmic, G_from_cosmic,
+    nucleon_count, coupling_fraction_from_cosmic, G_from_cosmic,
 )
 
 # Derived constants
@@ -197,12 +197,12 @@ def main() -> None:
     # = (e^2 / (4*pi*eps_0)) / (G * m_p^2)
 
     # This is the ratio of the fundamental force strengths.
-    # In our framework, the force is F = concurrence * hbar*c / r^2.
-    # So the concurrences are:
+    # In our framework, the force is F = coupling fraction * hbar*c / r^2.
+    # So the coupling fractions are:
     # alpha_em = e^2/(4*pi*eps_0*hbar*c)  (electromagnetic)
     # alpha_grav = G*m_p^2/(hbar*c)  (gravitational)
 
-    # The ratio of concurrences is:
+    # The ratio of coupling fractions is:
     # alpha_em/alpha_grav = (e^2/(4*pi*eps_0)) / (G*m_p^2)
 
     log("  Alternative view: C as a geometric factor.")
@@ -299,7 +299,7 @@ def main() -> None:
     log("  The bond energy at the Compton wavelength equals the rest mass.")
     log("  This is the definition of the Compton wavelength.")
     log("")
-    log("  The concurrence at the electron scale:")
+    log("  The coupling fraction at the electron scale:")
     log("    alpha_em = E_entangle / (hbar*c/lambda_C_e)")
     log("    where E_entangle is the entanglement energy per pair.")
     log("")
@@ -327,8 +327,8 @@ def main() -> None:
     log("  So the phase is:")
     log("    phase ~ alpha_em")
     log("")
-    log("  In the entanglement framework, the phase is the concurrence.")
-    log("  The concurrence is the entanglement strength per pair.")
+    log("  In the entanglement framework, the phase is the coupling fraction.")
+    log("  The coupling fraction is the entanglement strength per pair.")
     log("  So alpha_em IS the phase coherence of the electron's entanglement.")
     log("")
     log("  Why 1/137 specifically?")
@@ -433,7 +433,7 @@ def main() -> None:
     log("=" * 55)
     log("")
     log("  The same entanglement torque mechanism should apply at all mass")
-    log("  scales. Let's compute the concurrence for the weak and strong forces.")
+    log("  scales. Let's compute the coupling fraction for the weak and strong forces.")
     log("")
 
     # Strong force
@@ -457,7 +457,7 @@ def main() -> None:
     log("  where the entanglement is so strong that it confines quarks.")
     log("")
     log("  The confinement scale is where the entanglement energy equals")
-    log("  the kinetic energy of the quarks. At this scale, the concurrence")
+    log("  the kinetic energy of the quarks. At this scale, the coupling fraction")
     log("  is order unity, meaning the entanglement is maximal.")
     log("")
     log("  In QCD language, this is asymptotic freedom: at high energies")
@@ -544,7 +544,7 @@ def main() -> None:
     log("  where y is the Yukawa coupling.")
     log("")
     log("  In the entanglement framework, the Yukawa coupling is the")
-    log("  concurrence between the particle and the Higgs field.")
+    log("  coupling fraction between the particle and the Higgs field.")
     log("  The mass is the entanglement energy stored in the particle's")
     log("  interaction with the vacuum entanglement field.")
     log("")
@@ -558,7 +558,7 @@ def main() -> None:
     log(f"    y_top = {y_top:.6f}")
     log("")
     log("  The Yukawa couplings span 6 orders of magnitude. In the")
-    log("  entanglement framework, this is the range of concurrences")
+    log("  entanglement framework, this is the range of coupling fractions")
     log("  between different particles and the vacuum entanglement field.")
     log("")
     log("  Why these specific values? The Yukawa couplings are determined")
@@ -569,12 +569,12 @@ def main() -> None:
     log("  The mass hierarchy problem (why y_e << y_top) is the same as")
     log("  the hierarchy problem in the Higgs sector. The entanglement")
     log("  framework doesn't solve this yet, but it reframes it: the")
-    log("  question becomes why the concurrence between different particles")
+    log("  question becomes why the coupling fraction between different particles")
     log("  and the vacuum field varies by 6 orders of magnitude.")
     log("")
     log("  CONCLUSION: Mass is entanglement energy density. The Higgs VEV")
     log("  is the background entanglement energy of the vacuum. Yukawa")
-    log("  couplings are concurrences between particles and the vacuum.")
+    log("  couplings are coupling fractions between particles and the vacuum.")
     log("  The specific values of the Yukawa couplings remain to be derived.")
     log("")
 
@@ -618,7 +618,7 @@ def main() -> None:
     log("  This is the Dirac quantization condition.")
     log("")
     log("  In the entanglement framework, the Wilson loop phase is the")
-    log("  concurrence. The concurrence is quantized because the entanglement")
+    log("  coupling fraction. The coupling fraction is quantized because the entanglement")
     log("  state is discrete (the Hadamard gate collapses to definite bins).")
     log("")
     log("  CONCLUSION: Charge is quantized because the entanglement state")
@@ -639,12 +639,12 @@ def main() -> None:
 
     omega_earth = 2 * math.pi / (24 * 3600)
     spin_mag = 2 * omega_earth * R_EARTH / C
-    conc = concurrence_from_cosmic(M_UNIVERSE_TOTAL)
+    conc = coupling_fraction_from_cosmic(M_UNIVERSE_TOTAL)
     omega_C = OMEGA_COMPTON_P
 
     log(f"  Earth rotation: omega_E = {omega_earth:.6e} rad/s")
     log(f"  SpinMagnitude = 2*omega_E*R_E/c = {spin_mag:.6e}")
-    log(f"  Concurrence = {conc:.6e}")
+    log(f"  Coupling fraction = {conc:.6e}")
     log(f"  Compton frequency = {omega_C:.6e} rad/s")
     log("")
 
@@ -670,9 +670,9 @@ def main() -> None:
     log(f"     Ratio to GR: {omega_FD_axis / omega_FD_GR:.4e}")
     log("")
 
-    # Approach 3: Concurrence-weighted
+    # Approach 3: Coupling fraction-weighted
     omega_FD_conc = conc * spin_mag * omega_C
-    log(f"  c) Concurrence: omega_FD = {omega_FD_conc:.6e} rad/s")
+    log(f"  c) Coupling fraction: omega_FD = {omega_FD_conc:.6e} rad/s")
     log(f"     Ratio to GR: {omega_FD_conc / omega_FD_GR:.4e}")
     log("")
 
@@ -719,9 +719,9 @@ def main() -> None:
 
     # Our mechanism: the frame dragging comes from the orthogonal torque
     # The torque per nucleon pair is:
-    # tau = concurrence * hbar * c / r
+    # tau = coupling fraction * hbar * c / r
     # The precession frequency is:
-    # omega = tau / s = concurrence * hbar * c / (r * s)
+    # omega = tau / s = coupling fraction * hbar * c / (r * s)
     # where s = sqrt(3)/2 * hbar is the spin angular momentum.
 
     tau_per_pair = conc * HBAR * C / R_EARTH
@@ -757,7 +757,7 @@ def main() -> None:
     # due to the rotation of the mass. The precession frequency is:
     # omega_FD = 2 * G * J / (c^2 * r^3)
     # In our mechanism, this is:
-    # omega_FD = concurrence * omega_C * spin_mag * N_eff
+    # omega_FD = coupling fraction * omega_C * spin_mag * N_eff
     # where N_eff is the effective number of nucleons contributing.
 
     N_eff_required = omega_FD_GR / (conc * omega_C * spin_mag)

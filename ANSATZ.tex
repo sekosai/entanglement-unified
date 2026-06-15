@@ -171,6 +171,12 @@ $\beta(r) \propto (1-r/R)^2$ to leading order in the ratio $(L-x_-)/L$
   \beta(r) = (1 - r/R)^2
   \label{eq:racah_weight}
 \end{equation}
+This $(1-r/R)^2$ form is established for \emph{specific integrable
+free-fermion chains} as the leading term in the low-filling limit; it is not a
+general theorem about arbitrary low-density states. Carrying it over to the
+cosmic ensemble requires the separate (and unproven) identification discussed in
+Section~\ref{sec:weight_forced} --- ``$\Omega_b \approx 0.049$ is small'' is
+necessary but not sufficient justification.
 
 \subsection{Huerta \& van der Velde (2023--2024)}
 
@@ -402,6 +408,19 @@ For $K$ to be dimensionless:
 This is the universal scaling: the entanglement energy between two subsystems
 at separation $L$ is $\hbar c/L$, up to a dimensionless coefficient.
 
+\paragraph{Region entanglement vs.\ pairwise bonds (a genuine leap).}
+The modular Hamiltonian describes the entanglement of a \emph{region} with its
+\emph{complement}; it is not, on its face, a sum of pairwise bonds between
+individual particles. Dimensional analysis fixes the scaling of the
+region--complement entanglement energy at scale $L$, but the subsequent
+treatment (Sections~5--6) decomposes the cosmic entanglement into pairwise terms
+$C\,\kappa\hbar c/r$ summed over nucleon pairs. That pairwise decomposition is an
+\emph{assumption}, not a theorem: it is the ansatz that the region-level modular
+structure can be repackaged as additive two-body bonds with the same $\hbar c/r$
+scaling. It is plausible for a dilute, weakly-correlated ensemble, but we do not
+derive it from the modular Hamiltonian, and a referee is entitled to treat the
+pairwise picture as a modeling choice rather than a consequence.
+
 \subsection{Why Free Fermions Apply to Nucleons}
 
 The Bernard et al. calculation works with free fermions. Nucleons interact via
@@ -419,9 +438,15 @@ the strong force. Why does the free fermion result apply?
   \item \textbf{Bernard et al. is a verification, not an assumption:} It confirms
     the universal structure in a concrete solvable model.
 
-  \item \textbf{EFT argument:} At cosmic scales, only massless degrees of freedom
-    matter. Detailed QCD physics is integrated out and appears only in the
-    normalization, not in the $1/r$ scaling.
+  \item \textbf{EFT argument (with a caveat):} The long-wavelength behavior is
+    controlled by the effectively massless, low-energy sector, and the $1/r$
+    scaling depends only on dimensions, not on the interactions. We caution,
+    however, that integrating out QCD does \emph{not} turn nucleons into free
+    fermions: they remain massive composite particles with residual
+    interactions. The free-fermion modular Hamiltonian is therefore used as a
+    tractable \emph{model} of the low-filling sector --- justified by points
+    1--2, where the structure and scaling are theory-independent --- not by any
+    claim that nucleons are literally non-interacting.
 
   \item \textbf{Cross-check:} At the nucleon scale ($r \sim 1$ fm),
     $\hbar c/r \sim 200$ MeV, matching $\Lambda_{\mathrm{QCD}}$. This agreement at
@@ -628,12 +653,29 @@ The honest accounting:
     weighted-average machinery forces $\gamma = 4/5$ by simple
     integration. There is no remaining freedom.
   \item \textbf{Not forced.} The identification of the cosmic
-    ensemble with a Racah-chain low-filling state. This step is the
-    fragile bridge. It is plausible --- $\Omega_b \approx 0.049$ is
-    far from half-filling, free-fermion modular Hamiltonians are
-    the canonical EFT-level description of nucleons at cosmic scales
-    --- but it is not proved here, and a physicist who rejects the
-    identification can reject the prefactor.
+    ensemble with a Racah-chain low-filling state. This is the
+    fragile bridge, and it decomposes into three separate, individually
+    unproven leaps:
+    \begin{enumerate}
+      \item \emph{Why fermionic?} The cosmic reduced density matrix
+        contains bosons (photons, gluons, the Higgs, gravitons) as
+        well as fermions. We have no argument for why its modular
+        Hamiltonian should be approximated by a free-\emph{fermion}
+        model rather than a mixed or bosonic one.
+      \item \emph{Why $\Omega_b$ sets the filling?} We map the filling
+        fraction to the baryon fraction $\Omega_b \approx 0.049$, but
+        the matter fraction $\Omega_m \approx 0.31$ (also below $1/2$)
+        or some other parameter would be at least as defensible. The
+        specific mapping to the Racah parameters $x_1, x_2, x_3$ in
+        \cref{eq:racah_params} is not derived.
+      \item \emph{Why the Racah chain?} The Racah chain is the most
+        general \emph{integrable} inhomogeneous free-fermion chain.
+        The universe is not an integrable spin chain, and we do not
+        argue why integrability is a good approximation at cosmic
+        scales, only that it furnishes a tractable solvable model with
+        the right qualitative low-filling behavior.
+    \end{enumerate}
+    Any one of these can be rejected, and with it the prefactor.
   \item \textbf{Therefore.} The claim is: \emph{conditional on the
     Racah-chain low-filling identification, the prefactor $4/5$ is
     forced.} The conditional is the load-bearing physics, not the
@@ -693,9 +735,10 @@ field created by local mass concentrations.
 \section{The Ansatz}
 
 \textbf{Terminology note.} Throughout this section we use the symbol $C$ to
-denote the per-pair entanglement coupling (the strength with which two
-nucleons share entanglement). This is \emph{not} the Wootters concurrence
-of two-qubit quantum information theory. The two should not be conflated.
+denote the per-pair \emph{coupling fraction} (the strength with which two
+nucleons share entanglement). This is \emph{not} the Wootters concurrence of
+two-qubit quantum information theory, and the two should not be conflated; an
+earlier draft used ``concurrence'' for $C$, which was misleading.
 
 \subsection{Setup}
 
@@ -727,10 +770,23 @@ Equating to the universe's mass-energy $\Muniv c^2$:
   \frac{N^2}{2} \cdot C \cdot \kappa \hbar c \cdot \frac{5}{2R} = M c^2
   \label{eq:energy_balance}
 \end{equation}
+
+\paragraph{This is a constraint, not a dynamical law.}
+\Cref{eq:energy_balance} is the weakest step in the chain, and we flag it as
+such. It is an \emph{imposed} equality --- ``the universe's mass-energy equals
+its total pairwise entanglement energy'' --- not a consequence derived from a
+dynamical principle. It is in the spirit of holographic equipartition
+\citep{padmanabhan2010}, where the bulk energy is matched to a surface degree-of-freedom
+count, but we do not derive it from equipartition or from any equation of
+motion. A reader who does not grant this matching condition does not get $C$,
+and hence does not get the force law that follows. Supplying a dynamical
+justification --- ideally the same one that would fix the local bond density
+$\eta$ in Section~\ref{sec:local_derivation} --- is part of the open problem.
+
 Solving for $C$ and substituting $N = M/m_p$:
 \begin{equation}
   C = \frac{4}{5} \frac{m_p^2 c \Runiv}{\kappa \Muniv \hbar}
-  \label{eq:concurrence}
+  \label{eq:coupling_frac}
 \end{equation}
 
 \subsection{$G$ Emerges}
@@ -745,7 +801,7 @@ The total force between two masses $M$ and $m$ at distance $r$:
   F = \frac{M}{m_p} \cdot \frac{m}{m_p} \cdot C \cdot \kappa \frac{\hbar c}{r^2}
   \label{eq:total_force}
 \end{equation}
-Substituting \cref{eq:concurrence}:
+Substituting \cref{eq:coupling_frac}:
 \begin{equation}
   F = \frac{4}{5} \cdot M \cdot m \cdot \frac{c^2 \Runiv}{\Muniv} \cdot \frac{1}{r^2}
   \label{eq:newton_form}
@@ -915,6 +971,40 @@ We can offer (1) and (2) at the level of structural sketch. We do
 \emph{not} have (3), and to our knowledge nobody else does either.
 This is the open problem that, if solved, would convert the present
 program from a consistency check into a derivation.
+
+\subsection{A Concrete Attempt at $\eta$ (and Where It Fails)}
+
+To make the open problem concrete rather than a sketch, here is the most
+natural attempt to compute $\eta$ from the bond picture, carried until it
+breaks. Take the entropy--area law $S = \eta\, k_B\, \mathcal{A}$ and suppose
+the horizon is threaded by entanglement links, each carrying of order one bit
+($\sim k_B \ln 2$), with an areal density set by a single UV cutoff length
+$\ell$:
+\begin{equation}
+  \eta \sim \frac{\ln 2}{\ell^2}.
+\end{equation}
+Feeding this into the Jacobson relation $G = c^3/(4\hbar\eta)$ gives
+\begin{equation}
+  G \sim \frac{c^3 \ell^2}{4 \hbar \ln 2}.
+\end{equation}
+Demanding the measured value of $G$ then \emph{fixes the cutoff}:
+\begin{equation}
+  \ell^2 \sim \frac{4 \hbar G \ln 2}{c^3} = 4\ln 2\;\ell_P^2
+  \quad\Longrightarrow\quad
+  \ell \sim \ell_P = \sqrt{\frac{\hbar G}{c^3}}.
+\end{equation}
+This is exactly where the attempt fails. To get the right $G$ the link density
+must be the Planck density, $\ell \sim \ell_P$ --- but $\ell_P$ contains $G$ by
+definition. We have not computed $\eta$ from $G$-free QFT inputs; we have
+re-expressed $G$ in terms of a cutoff that itself encodes $G$. The bond energy
+$E_{\mathrm{bond}} = \hbar c/\ell$ at this cutoff is the Planck energy, which
+tells the same story. This is the identical circularity that defeats the
+Jacobson--Padmanabhan--Verlinde programs at the step of fixing the area-law
+coefficient: nothing in the local entanglement counting, as currently
+formulated, sets the cutoff without already knowing $G$. A genuine derivation
+needs an independent, $G$-free determination of either $\ell$ or $\eta$ --- for
+instance from a finite, regulator-independent entanglement entropy density of
+the relevant QFT --- which we do not have.
 
 \subsection{Why the Bohr Magneton Is the Real Local Test}
 

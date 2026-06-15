@@ -73,16 +73,17 @@ GAMMA_PREFACTOR = 4.0 / 5.0  # forced by Racah-chain modular Hamiltonian
                               # at low filling fraction (see ANSATZ.tex)
 
 
-def concurrence_from_cosmic(M_universe: float = M_UNIVERSE_TOTAL,
-                             R_universe: float = R_UNIVERSE) -> float:
-    """Per-pair entanglement coupling from cosmic energy balance.
+def coupling_fraction_from_cosmic(M_universe: float = M_UNIVERSE_TOTAL,
+                                   R_universe: float = R_UNIVERSE) -> float:
+    """Per-pair coupling fraction from cosmic energy balance.
 
     Solves: total_entanglement_energy = total_mass_energy * c^2
     with weight gamma=4/5 on the modular Hamiltonian.
 
-    NOTE: 'concurrence' here means the per-pair coupling C in the bond
-    energy E_pair = C * hbar*c / r. This is not the Wootters concurrence
-    of two-qubit entanglement.
+    NOTE: the 'coupling fraction' is the per-pair coupling C in the bond
+    energy E_pair = C * hbar*c / r. It is NOT the Wootters concurrence of
+    two-qubit entanglement (an earlier draft called this 'concurrence',
+    which was misleading).
     """
     return GAMMA_PREFACTOR * (M_P**2 * C * R_universe) / (M_universe * HBAR)
 
