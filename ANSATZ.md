@@ -580,16 +580,42 @@ Two very different uncertainties matter:
   *consistency*, not a precision test.
 - **Definitional uncertainty (which $R$, which $M$).** This dominates and is far
   larger. Hubble radius vs. particle horizon moves $R$ by tens of percent;
-  baryonic ($2.3\times10^{52}$ kg), matter ($1.5\times10^{53}$ kg), or total
-  energy ($4.7\times10^{53}$ kg) moves $M$ by a factor $\sim 20$. The prefactor
-  lands on $4/5$ only for one mutually consistent critical-density choice —
-  which is exactly the Mach–Sciama statement, and exactly why this is not an
-  independent measurement of $G$.
+  baryonic, matter ($1.5\times10^{53}$ kg), or total energy ($4.7\times10^{53}$
+  kg) moves $M$ across an order of magnitude (see the honest $G$-free census in
+  §6.2). The prefactor lands on $4/5$ only for one mutually consistent
+  critical-density choice — which is exactly the Mach–Sciama statement, and
+  exactly why this is not an independent measurement of $G$.
 
 The honest reading: $4/5$ is the prediction; the sub-percent central match is
 fortuitous given the input uncertainties; and the substantive falsifiable
 content is the discrete $4/5$-vs-$16/15$ choice (§3.3) and the $G$-free
 electron-scale test (the Empirical Anchor, §7.1).
+
+### 6.2 A Fully $G$-Free Evaluation
+
+We can feed the formula *only* inputs obtainable without $G$: a radius from
+expansion kinematics, and a baryonic mass from CMB photon-counting ($n_\gamma$
+from the blackbody temperature) times the BBN baryon-to-photon ratio $\eta$. An
+honest baryon census in the particle-horizon volume gives
+$M_b \approx 1.5\times10^{53}$ kg — about $6\times$ larger than the
+$\Omega_b \times M_{\text{universe}}$ figure, which silently inherits the
+back-fit total.
+
+| $R$ (G-free) | $M$ (G-free) | $G_{\text{pred}}/G_{\text{meas}}$ |
+|---|---|---|
+| Hubble radius $c/H_0$ (14.5 Gly) | baryon census (CMB+BBN) | $32.6$ |
+| Particle horizon (46.5 Gly) | baryon census (CMB+BBN) | $3.2$ |
+
+So purely $G$-free inputs land within a factor of $\sim 3$ — **not** the factor
+of $\sim 20$ a naive $\Omega_b$ scaling suggests. A clean analytic check
+sharpens the point: at the Hubble radius and critical density, $c^2R/M = 2G$
+identically, so the $4/5$ prefactor gives *exactly* $G_{\text{pred}} =
+\tfrac{8}{5}G = 1.600\,G$, overshooting the textbook Mach–Sciama coefficient
+$1/2$ by $8/5$. The $0.21\%$ match is recovered only by pairing the particle
+horizon ($\sim 3.2\times$ larger than the Hubble radius) with the
+gravitationally inferred total mass. No purely $G$-free $(R, M)$ pair reproduces
+measured $G$; the closest is within $\sim 3\times$. These evaluations are
+reproduced in `gfree_inputs.py`.
 
 ---
 
@@ -736,6 +762,8 @@ All derivations are implemented in Python scripts:
 - `verify_symbolic.py` -- Symbolic (`sympy`) proof of the $\langle 1/r \rangle$
   integrals, the discrete $4/5$ vs $16/15$ prefactors, and the Step A–F algebra
   (showing $\hbar$, $m_p$, $\kappa$ cancel exactly)
+- `gfree_inputs.py` -- Evaluates the prefactor on purely $G$-free inputs
+  (expansion-kinematics radii; CMB+BBN baryon census), quantifying the circularity
 - `constants.py` -- Physical constants and helper functions
 
 All scripts run cleanly and produce consistent results. The symbolic check makes

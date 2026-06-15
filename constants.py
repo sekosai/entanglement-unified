@@ -42,7 +42,10 @@ G_TARGET = 9.807             # m/s^2 (measured g at surface)
 # ---------------------------------------------------------------------------
 # Observable universe parameters
 # ---------------------------------------------------------------------------
-M_UNIVERSE_BARYONIC = 2.32e52   # kg (baryonic matter only, ~4.9% of total)
+M_UNIVERSE_BARYONIC = 2.32e52   # kg (Omega_b * M_total bookkeeping, ~4.9%).
+                                # NOTE: an honest baryon census (CMB photon
+                                # count x BBN eta x particle-horizon volume)
+                                # gives ~1.5e53 kg; see gfree_inputs.py.
 M_UNIVERSE_DM = 1.268e53        # kg (cold dark matter, ~26.8% of total)
 M_UNIVERSE_MATTER = 1.50e53     # kg (baryonic + dark matter, ~31.7% of total)
 M_UNIVERSE_TOTAL = 4.73e53      # kg (total energy density, ~100% Lambda-CDM)
@@ -53,10 +56,10 @@ FRACTION_BARYONIC = 0.049
 FRACTION_DARK_MATTER = 0.268
 FRACTION_DARK_ENERGY = 0.683
 
-# Hubble constant
-H0 = 67.4e-3                 # m/s/Mpc
+# Hubble constant (Planck 2018: 67.4 km/s/Mpc)
+H0_KM_S_MPC = 67.4           # km/s/Mpc
 MPC = 3.086e22               # m per Mpc
-H0_SI = H0 / MPC             # s^-1
+H0_SI = H0_KM_S_MPC * 1e3 / MPC   # s^-1  (~2.18e-18)
 
 # ---------------------------------------------------------------------------
 # Measured G -- for verification ONLY, never as an input to derivation

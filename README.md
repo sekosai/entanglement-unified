@@ -35,6 +35,7 @@ Applied to any local causal patch (e.g., Earth) the same formula gives `G_eff âˆ
 | `derive_3d_extension.py` | 3+1D extension via Huerta & van der Velde |
 | `derive_unified.py` | Unified-theory companion script |
 | `verify_symbolic.py` | Symbolic (`sympy`) proof of the `<1/r>` integrals, the discrete `4/5` vs `16/15` prefactors, and the Step Aâ€“F algebra |
+| `gfree_inputs.py` | Evaluates the prefactor on purely `G`-free inputs (expansion-kinematics radii; CMB+BBN baryon census) |
 | `constants.py` | Physical constants |
 
 ## Compile
@@ -53,6 +54,7 @@ python3 derive_bond_energy.py
 python3 derive_3d_extension.py
 python3 derive_unified.py
 python3 verify_symbolic.py
+python3 gfree_inputs.py
 ```
 
 ## Status

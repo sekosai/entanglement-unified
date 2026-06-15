@@ -276,7 +276,7 @@ less $G$-dependent. None of the obvious choices succeed:
     \toprule
     Choice for $M$ & $G$-independent? & What the claim becomes \\
     \midrule
-    Baryonic mass only & Partially --- BBN $+$ atomic spectra are largely $G$-free & Predicts wrong $G$ by factor of $\sim 20$ ($\Omega_b \approx 0.049$) \\
+    Baryonic mass only & Yes --- CMB photon count $\times$ BBN $\eta$, no $G$ & Honest census $M_b \approx 1.5\times10^{53}$ kg; $G$ off by only $\sim 3\times$, not $\sim 20\times$ \\
     Baryon $+$ dark matter & No --- DM is gravitationally inferred & Reduces error but stays circular \\
     Total energy budget & No --- $\rho_c = 3H^2/(8\pi G)$ is explicitly circular & Identity, not derivation \\
     Komar/ADM/Misner-Sharp & No --- GR mass notions & Inside what we'd derive \\
@@ -293,6 +293,32 @@ the relation match $G$ requires including dark matter and dark
 energy, both of which are gravitationally inferred. The match is
 therefore even more circular than the headline calculation suggests:
 most of the mass-energy "input" is itself a $G$-laden output.
+
+\paragraph{A fully $G$-free evaluation.}
+We can push harder and feed the formula \emph{only} inputs obtainable without
+$G$: a radius from expansion kinematics, and a baryonic mass from CMB
+photon-counting (the photon density $n_\gamma$ follows from the blackbody
+temperature) times the BBN baryon-to-photon ratio $\eta$. An honest baryon
+census in the particle-horizon volume gives $M_b \approx 1.5\times10^{53}$ kg ---
+about $6\times$ larger than the $\Omega_b \times \Muniv$ figure, which silently
+inherits the back-fit total. With $R$ the particle horizon, this purely $G$-free
+pair yields $G_{\mathrm{pred}}/G_{\mathrm{meas}} \approx 3.2$ --- off by a factor
+of $\sim 3$, \emph{not} the factor of $\sim 20$ that a naive $\Omega_b$ scaling
+suggests. (With the Hubble radius instead, the same census is off by $\sim 33$,
+since $G \propto 1/R^2$ at fixed density.)
+
+A clean analytic check sharpens what the prefactor is doing. At the Hubble
+radius and critical density, $c^2 R/M = 2G$ identically, so the $4/5$ prefactor
+gives \emph{exactly}
+\begin{equation}
+  G_{\mathrm{pred}} = \tfrac{8}{5}\,G = 1.600\,G,
+\end{equation}
+overshooting the textbook Mach--Sciama coefficient $1/2$ by $8/5$. The
+$0.21\%$ agreement of Section~\ref{sec:numerical} is recovered only by pairing
+the particle horizon (about $3.2\times$ larger than the Hubble radius) with the
+gravitationally inferred total mass. No purely $G$-free $(R, M)$ pair reproduces
+the measured $G$; the closest is within a factor of $\sim 3$. All of these
+evaluations are reproduced in \texttt{gfree\_inputs.py}.
 
 \subsection{The Local Test, and What It Tells Us About the Relation}
 \label{sec:local_test}
@@ -1032,6 +1058,9 @@ All derivations are implemented in Python scripts:
   \item \texttt{verify\_symbolic.py}---Symbolic (\texttt{sympy}) proof of the
     $\av{1/r}$ integrals, the discrete $4/5$ vs $16/15$ prefactors, and the
     energy-balance chain (showing $\hbar$, $m_p$, $\kappa$ cancel exactly)
+  \item \texttt{gfree\_inputs.py}---Evaluates the prefactor on purely $G$-free
+    inputs (expansion-kinematics radii; CMB$+$BBN baryon census), quantifying
+    the circularity
   \item \texttt{constants.py}---Physical constants and helper functions
 \end{itemize}
 
