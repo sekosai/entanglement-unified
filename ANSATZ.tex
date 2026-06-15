@@ -4,7 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{physics}
 \usepackage{booktabs}
-\usepackage{natbib}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage[hyperfootnotes=false]{hyperref}
 \usepackage{cleveref}
 \usepackage{float}
@@ -28,7 +28,7 @@
 \newcommand{\Nuniv}{N_{\mathrm{universe}}}
 \newcommand{\av}[1]{\left\langle #1 \right\rangle}
 
-\title{An Entanglement Mechanism for the Mach--Sciama Relation:\\
+\title{An Entanglement Ansatz for the Mach--Sciama Relation:\\
 Newton's Constant from Cosmic Boundary Conditions}
 \author{}
 \date{}
@@ -71,9 +71,30 @@ the load-bearing empirical leg of the program: it uses no $G$, no
 fitted parameters, and no cosmic inputs.
 \end{abstract}
 
+\section*{The Empirical Anchor: A $G$-Free Test (Read First)}
+
+The strongest evidence for the mechanism is \emph{not} the cosmic $G$ match
+below --- which, as Section~\ref{sec:scope} explains, is a one-scale consistency
+check entangled with $G$ through the cosmic inputs. The strongest evidence is an
+\textbf{exact, parameter-free, $G$-free} result obtained by applying the
+\emph{same} helical-jerk / modular-Hamiltonian mechanism at the electron Compton
+scale: the electron's orthogonal-jerk trajectory is a current loop whose
+magnetic moment is exactly the Bohr magneton,
+\begin{equation}
+  \mu = I A = \frac{e\,\omega_e}{2\pi}\,\pi\lambda_{C,e}^2 = \frac{e\hbar}{2 m_e}
+      = \mu_B,
+\end{equation}
+using only $e$, $\hbar$, $m_e$, $c$, with $G$ nowhere present and no fitted
+parameters or cosmic inputs (companion paper). The logic of this paper follows:
+the mechanism is validated exactly and $G$-freely at the electron scale; what
+follows is what the same mechanism implies for cosmic boundary conditions.
+Gravity is an \emph{application} of a validated mechanism, not the primary
+evidence for it. Read the cosmic number
+(Section~\ref{sec:numerical}, below) in that light.
+
 \section{Theoretical Foundation}
 
-The derivation rests on five independent results from quantum field theory
+The ansatz rests on five independent results from quantum field theory
 and conformal field theory.
 
 \subsection{Bisognano--Wichmann Theorem (1975/1976)}
@@ -417,7 +438,7 @@ the strong force. Why does the free fermion result apply?
     \toprule
     Scale & $r$ & $E_{\mathrm{bond}} = \hbar c/r$ & Physical interpretation \\
     \midrule
-    Nucleon & 1 fm & $3.2 \times 10^{-11}$ J (0.2 MeV) & Strong force scale ($\Lambda_{\mathrm{QCD}}$) \\
+    Nucleon & 1 fm & $3.2 \times 10^{-11}$ J (200 MeV) & Strong force scale ($\Lambda_{\mathrm{QCD}}$) \\
     Earth & 6371 km & $5.0 \times 10^{-33}$ J & $3.1 \times 10^{-14}$ eV \\
     Cosmic & $4.4 \times 10^{26}$ m & $7.2 \times 10^{-53}$ J & Gravitational binding scale \\
     \bottomrule
@@ -515,11 +536,20 @@ rapidly as $a$ deviates from 2.
   \end{tabular}
 \end{table}
 
-The sensitivity confirms that small deviations from $a = 2$ produce
-noticeably worse agreement with $G$. But the more important
-question --- the one this paper's claim hinges on --- is whether
-$a = 2$ is \emph{forced} by physics or merely \emph{found} to fit.
-That is the subject of the next subsection.
+The continuous family $\beta(r) = (1-r/R)^a$ admits the closed form
+\begin{equation}
+  \gamma(a) = \frac{2}{\av{1/r}\,R} = \frac{4}{a+3},
+  \label{eq:gamma_of_a}
+\end{equation}
+so $a = 2 \Rightarrow \gamma = 4/5$, and the scan above is sensitive near
+$a = 2$. This continuous scan is, however, only illustrative: the physics does
+not admit an arbitrary exponent. The admissible weights are the two
+\emph{discrete} universal CFT results --- the vacuum (CHM) weight and the
+low-filling (Racah) weight --- which give $16/15$ and $4/5$ respectively. The
+real question is therefore not ``what value of $a$ fits $G$?'' but ``which
+discrete regime describes the cosmic ensemble?'' --- whether $a = 2$ is
+\emph{forced} by physics or merely \emph{found} to fit. That is the subject of
+the next subsection.
 
 \subsection{Was the Quadratic Weight Forced or Found?}
 \label{sec:weight_forced}
@@ -540,7 +570,7 @@ Hamiltonians on spherical regions.
     CFT, the modular Hamiltonian is the boost generator with weight
     \begin{equation}
       \beta_{\mathrm{CHM}}(r) = \frac{R^2 - r^2}{2R}.
-      \label{eq:chm_weight}
+      \label{eq:chm_weight_forced}
     \end{equation}
     This vanishes \emph{linearly} as $r \to R$
     ($\beta \sim (R-r)$), is universal across CFTs, and applies to
@@ -552,7 +582,7 @@ Hamiltonians on spherical regions.
     leading weight is \emph{quadratic}:
     \begin{equation}
       \beta_{\mathrm{Racah}}(r) = (1 - r/R)^2.
-      \label{eq:racah_weight}
+      \label{eq:racah_weight_forced}
     \end{equation}
     This vanishes \emph{quadratically} as $r \to R$ and applies to
     a finite-density fermionic ground state, not to the vacuum.
@@ -660,7 +690,7 @@ The boost rotation back toward the mass is the gravitational force. Gravity
 is not a fundamental force---it is the anisotropy in the cosmic entanglement
 field created by local mass concentrations.
 
-\section{The Derivation}
+\section{The Ansatz}
 
 \textbf{Terminology note.} Throughout this section we use the symbol $C$ to
 denote the per-pair entanglement coupling (the strength with which two
@@ -729,6 +759,7 @@ Comparing to Newton's law $F = G M m / r^2$:
 only on $c$, $\Runiv$, and $\Muniv$.
 
 \section{Numerical Consistency Check}
+\label{sec:numerical}
 
 Using cosmic inputs:
 \begin{align}
@@ -747,20 +778,36 @@ the predicted relation gives
 to be compared with $G_{\mathrm{measured}} = 6.674 \times 10^{-11}\;
 \mathrm{m^3/(kg{\cdot}s^2)}$. The ratio is $1.0021$.
 
-This check should be read in the light of Section~\ref{sec:scope}: the
-inputs $\Runiv$ and $\Muniv$ are not independent of $G$, and each carries
-roughly $5$--$10\%$ uncertainty in standard cosmology. The headline
-$0.21\%$ agreement is therefore a consistency check, not a precision
-result. The honest statement is: the predicted prefactor $4/5$, combined
-with the standard cosmic parameters, is consistent with the measured value
-of $G$ to well within those parameter uncertainties.
+This check should be read in the light of Section~\ref{sec:scope}. The central
+value carries two very different uncertainties, propagated through
+$\delta G/G = \sqrt{(\delta R/R)^2 + (\delta M/M)^2}$:
+
+\begin{itemize}
+  \item \textbf{Measurement uncertainty} (definitions of $R$, $M$ fixed). With
+    the particle-horizon radius and the critical-density mass at Planck-level
+    precision, $\delta R/R \sim 2\%$ and $\delta M/M \sim 3\%$ give
+    $\delta G/G \sim 4\%$, i.e.\ $G_{\mathrm{predicted}} = (6.7 \pm 0.3)\times
+    10^{-11}$. The measured value sits comfortably inside this band --- but the
+    band is $\sim 20\times$ wider than the $0.21\%$ central offset, so the
+    agreement is a \emph{consistency}, not a precision test.
+  \item \textbf{Definitional uncertainty} (which $R$, which $M$). This dominates
+    and is far larger: Hubble radius vs.\ particle horizon moves $R$ by tens of
+    percent, and baryonic vs.\ matter vs.\ total mass moves $M$ by a factor
+    $\sim 20$ (Tables~\ref{tab:R_choices}--\ref{tab:M_choices}). The prefactor
+    lands on $4/5$ only for one mutually consistent critical-density choice ---
+    which is exactly the Mach--Sciama statement, and exactly why this is not an
+    independent measurement of $G$.
+\end{itemize}
 
 A genuine prefactor test would require an independent constraint on
 $\Muniv/\Runiv$ that does not pass through $G$. We are not aware of one
 that is currently tight enough to discriminate, say, $4/5$ from $1/2$ or
-$1$ at the few-percent level.
+$1$ at the few-percent level. The substantive falsifiable content is therefore
+the discrete $4/5$-vs-$16/15$ choice (Section~\ref{sec:weight_forced}) and the
+$G$-free electron-scale test (Section~\ref{sec:status_predictions}).
 
 \section{Status of the Predictions}
+\label{sec:status_predictions}
 
 Honest accounting of what the mechanism currently predicts cleanly,
 predicts structurally, and does not yet predict.
@@ -809,20 +856,6 @@ $\alpha_{\mathrm{grav}} = G m_p^2/(\hbar c) \approx 5.9 \times 10^{-39}$
 follows from the predicted relation for $G$ together with $m_p$, $\hbar$,
 and $c$. It is therefore consistent with the framework but not an
 independent prediction --- it inherits the same circularity as $G$ itself.
-
-\section{Comparison to Kolmogorov's Four-Fifths Law}
-
-The factor $4/5$ also appears as an exact coefficient in Kolmogorov's
-four-fifths law for fully developed turbulence, where the third-order
-longitudinal velocity structure function satisfies
-$\langle (\delta u_\parallel)^3 \rangle = -\frac{4}{5} \varepsilon r$
-in the inertial range. This is one of the few exact results in
-turbulence theory, deriving from energy conservation in a cascade
-across scales. The recurrence of $4/5$ in two distinct
-energy-transfer-across-scales problems (turbulent cascade in 3D,
-entanglement-energy distribution across the cosmic 3+1D modular
-Hamiltonian) is suggestive but not by itself a derivation; we note
-the parallel as a possible structural connection.
 
 \section{Toward a Local Derivation}
 \label{sec:local_derivation}
@@ -906,12 +939,17 @@ All derivations are implemented in Python scripts:
   \item \texttt{derive\_G.py}---Main $G$ derivation
   \item \texttt{derive\_bond\_energy.py}---$E_{\mathrm{bond}} = \hbar c/r$ derivation
   \item \texttt{derive\_3d\_extension.py}---3+1D extension via Huerta \& van der Velde
+  \item \texttt{verify\_symbolic.py}---Symbolic (\texttt{sympy}) proof of the
+    $\av{1/r}$ integrals, the discrete $4/5$ vs $16/15$ prefactors, and the
+    energy-balance chain (showing $\hbar$, $m_p$, $\kappa$ cancel exactly)
   \item \texttt{constants.py}---Physical constants and helper functions
 \end{itemize}
 
-All scripts run cleanly and produce consistent results.
+All scripts run cleanly and produce consistent results. The symbolic check makes
+the core arithmetic exact rather than numerical: run
+\texttt{python3 verify\_symbolic.py}.
 
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}

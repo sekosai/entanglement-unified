@@ -1,6 +1,6 @@
-# An Entanglement Mechanism for the Mach–Sciama Relation
+# An Entanglement Ansatz for the Mach–Sciama Relation
 
-> **Authoritative version:** [`DERIVATION.pdf`](DERIVATION.pdf) is the canonical document. This markdown is an older draft; the PDF supersedes it on framing and scope.
+> **Authoritative version:** [`ANSATZ.pdf`](ANSATZ.pdf) is the canonical document. This markdown is an older draft; the PDF supersedes it on framing and scope.
 
 ## Abstract
 
@@ -40,9 +40,37 @@ program.
 
 ---
 
+## The Empirical Anchor: A $G$-Free Test (Read First)
+
+The strongest evidence for the mechanism is *not* the cosmic $G$ match below —
+which, as the Scope note explains, is a one-scale consistency check entangled
+with $G$ through the cosmic inputs. The strongest evidence is an **exact,
+parameter-free, $G$-free** result obtained by applying the *same* helical-jerk /
+modular-Hamiltonian mechanism at the electron Compton scale. The electron's
+orthogonal-jerk trajectory is a current loop whose magnetic moment is exactly
+the Bohr magneton:
+
+$$
+\mu = I \cdot A = \frac{e\,\omega_e}{2\pi}\,\pi \lambda_{C,e}^2
+   = \frac{e\hbar}{2 m_e} = \mu_B,
+$$
+
+using only $e$, $\hbar$, $m_e$, $c$ — every input independently measured, with
+$G$ nowhere present and no fitted parameters or cosmic inputs. (Full treatment in
+`DERIVE_EM.pdf`.)
+
+The logic of this paper follows from that anchor: *the mechanism is validated
+exactly and $G$-freely at the electron scale; what follows is what the same
+mechanism implies for cosmic boundary conditions.* Gravity is an **application**
+of a validated mechanism, not the primary evidence for it. The cosmic number in
+§6 should be read in that light, and the genuinely falsifiable claims are
+collected in §7.
+
+---
+
 ## 1. Theoretical Foundation
 
-The derivation rests on five independent results from quantum field theory
+The ansatz rests on five independent results from quantum field theory
 and conformal field theory:
 
 ### 1.1 Bisognano-Wichmann Theorem (1975/1976)
@@ -203,7 +231,7 @@ the strong force. Why does the free fermion result apply?
 
 | Scale | $r$ | $E_{\text{bond}} = \hbar c/r$ | Physical interpretation |
 |-------|-----|-------------------------------|-------------------------|
-| Nucleon | 1 fm | $3.2 \times 10^{-11}$ J (0.2 MeV) | Strong force scale ($\Lambda_{\text{QCD}}$) |
+| Nucleon | 1 fm | $3.2 \times 10^{-11}$ J (200 MeV) | Strong force scale ($\Lambda_{\text{QCD}}$) |
 | Earth | 6371 km | $5.0 \times 10^{-33}$ J | $3.1 \times 10^{-14}$ eV |
 | Cosmic | $4.4 \times 10^{26}$ m | $7.2 \times 10^{-53}$ J | Gravitational binding scale |
 
@@ -227,6 +255,23 @@ The modular Hamiltonian weight on this region is quadratic:
 $$
 \beta_{\text{1D}}(x) = (1 - x/L)^2
 $$
+
+**The load-bearing conjecture.** Everything downstream depends on one
+identification that is *assumed*, not derived: that the cosmic reduced density
+matrix is well-approximated by a **low-filling free-fermion (Racah-chain)
+state**, with filling fraction set by the baryon fraction
+$\rho = \Omega_b \approx 0.049 \ll 1/2$. This is the single physics step that
+selects the low-filling weight $(1 - r/R)^2$ — and hence $\gamma = 4/5$ — over
+the vacuum weight, which would give $16/15$ (§3.3). We do not derive it from
+first principles; it is the conjecture on which the whole result rests and where
+the argument is most vulnerable.
+
+- *What would support it:* a derivation of why the cosmic ensemble is fermionic
+  and low-filling, why $\Omega_b$ (rather than $\Omega_{\text{total}}$) sets the
+  filling, and a check that the active band $[x_-, x_+]$ follows from $\rho$ with
+  no further input.
+- *What would falsify it:* improved cosmic parameters that drive the consistent
+  prefactor away from $4/5$ toward $16/15$ or the Schwarzschild $1/2$.
 
 ### 3.2 The 3+1D Extension
 
@@ -267,24 +312,58 @@ $$
 \gamma = \frac{2}{\langle 1/r \rangle \cdot R} = \frac{2}{5/2} = \frac{4}{5}
 $$
 
-### 3.3 Sensitivity to the Weight Exponent
+**Origin of the factor 2.** The normalization in $\gamma = 2/(\langle 1/r \rangle R)$
+is not an arbitrary choice: the factor of 2 is the inverse of the pairwise-counting
+factor $1/2$ in the energy balance of Step E (§5). There the total entanglement
+energy sums over the $N_{\text{universe}}^2/2$ distinct nucleon pairs,
+$E_{\text{ent}} = \tfrac{1}{2} N_{\text{universe}}^2 \, C \, \kappa \hbar c \, \langle 1/r \rangle$.
+Equating to $M_{\text{universe}} c^2$ and solving for the coupling carries that
+$1/2$ into the denominator, so the prefactor multiplying $c^2 R / M_{\text{universe}}$
+is $1/(\tfrac{1}{2}\langle 1/r \rangle R) = 2/(\langle 1/r \rangle R) = \gamma$.
+In other words $\gamma$ is *defined by* and *identical to* the prefactor produced
+by the Step-E energy balance; §3.2 is a preview of that result. The only
+genuinely independent input is the weighted mean $\langle 1/r \rangle = 5/(2R)$,
+which follows from the quadratic weight $\beta(r) = (1 - r/R)^2$.
 
-The quadratic weight $a = 2$ is determined by the Racah chain physics
-(low filling fraction $\rho = 0.049$), not by fitting to $G$. A scan
-of nearby exponents shows the result is sensitive: the error grows
-rapidly as $a$ deviates from 2.
+### 3.3 The Discrete Dichotomy: $4/5$ vs $16/15$
 
-| $a$ | $\langle 1/r \rangle R$ | $\gamma$ | Error vs measured $G$ |
-|-----|------------------------|----------|------------------------|
-| 1.8 | 2.400 | 0.8333 | 4.39% |
-| 1.9 | 2.450 | 0.8163 | 2.26% |
-| **2.0** | **2.500** | **0.8000** | **0.21%** |
-| 2.1 | 2.550 | 0.7843 | 1.75% |
-| 2.2 | 2.600 | 0.7692 | 3.64% |
+The relevant question is not "what continuous exponent $a$ fits $G$?" but
+"which of the two *physically admissible* universal CFT weights describes the
+cosmic ensemble?" Conformal field theory supplies exactly two candidate weight
+functions for a spherical region, and they give two discrete, parameter-free
+prefactors.
 
-The sensitivity confirms that the quadratic weight is not an arbitrary
-choice: a small deviation from $a = 2$ would produce a noticeably worse
-agreement with the measured value of $G$.
+**Vacuum regime (Casini–Huerta–Myers).** The vacuum modular weight is the
+parabola $\beta(r) = (R^2 - r^2)/2R$ (§1.2). Then
+
+$$
+\left\langle \frac{1}{r} \right\rangle_{\text{vac}}
+= \frac{\int_0^R \beta\, r\, dr}{\int_0^R \beta\, r^2\, dr}
+= \frac{R^3/8}{R^4/15} = \frac{15}{8R},
+\qquad
+\gamma_{\text{vac}} = \frac{2}{\langle 1/r \rangle R} = \frac{16}{15} \approx 1.067.
+$$
+
+**Low-filling regime (Bernard et al. / Racah chain).** At low filling fraction
+the active weight is $\beta(r) = (1 - r/R)^2$ (§1.4), giving
+$\langle 1/r \rangle = 5/(2R)$ and $\gamma = 4/5 = 0.800$ (§3.2).
+
+| Regime | weight $\beta(r)$ | $\langle 1/r \rangle R$ | $\gamma$ | $G$ vs measured |
+|--------|-------------------|-------------------------|----------|-----------------|
+| Vacuum CHM | $(R^2 - r^2)/2R$ | $15/8$ | $16/15$ | $+33\%$ |
+| **Low-filling Racah** | $(1 - r/R)^2$ | $5/2$ | $\mathbf{4/5}$ | $+0.2\%$ |
+
+These are **discrete** alternatives, not a tuned continuum: the prediction is a
+choice between two universal regimes, and the data selects the low-filling one.
+The prefactors differ by a factor $\tfrac{16}{15} \div \tfrac{4}{5} = \tfrac{4}{3}$,
+so the vacuum regime overshoots $G$ by 33% — far outside cosmic-parameter
+uncertainty. The load-bearing physics is therefore the *regime identification*
+(§3.1), not a fit; given that identification, $4/5$ is forced.
+
+A continuous scan over $\beta = (1 - r/R)^a$ gives the closed form
+$\gamma(a) = 4/(a+3)$ (so $a=2 \Rightarrow 4/5$), which is indeed sensitive near
+$a=2$. But that scan is only illustrative: the physics admits the two discrete
+weights above, not an arbitrary exponent.
 
 ---
 
@@ -331,7 +410,7 @@ field created by local mass concentrations.
 
 ---
 
-## 5. The Derivation
+## 5. The Ansatz
 
 ### Step A: Angular Momentum Budget
 
@@ -370,10 +449,10 @@ where $\langle 1/r \rangle = 5/(2R_{\text{universe}})$ from the quadratic weight
 Equating to the universe's mass-energy $M_{\text{universe}} c^2$:
 
 $$
-\frac{N^2}{2} \cdot C \cdot \kappa \hbar c \cdot \frac{5}{2R} = M c^2
+\frac{N_{\text{universe}}^2}{2} \cdot C \cdot \kappa \hbar c \cdot \frac{5}{2R} = M_{\text{universe}} c^2
 $$
 
-Solving for $C$ and substituting $N = M/m_p$:
+Solving for $C$ and substituting $N_{\text{universe}} = M_{\text{universe}}/m_p$:
 
 $$
 C = \frac{4}{5} \frac{m_p^2 c R_{\text{universe}}}{\kappa M_{\text{universe}} \hbar}
@@ -387,7 +466,9 @@ $$
 F_{\text{pair}} = C \cdot \kappa \frac{\hbar c}{r^2}
 $$
 
-The total force between two masses $M$ and $m$ at distance $r$:
+The total force between two test masses $M$ and $m$ at distance $r$ (these
+are local masses, distinct from the cosmic $M_{\text{universe}}$ that enters
+through $C$):
 
 $$
 F = \frac{M}{m_p} \cdot \frac{m}{m_p} \cdot C \cdot \kappa \frac{\hbar c}{r^2}
@@ -430,52 +511,139 @@ $$
 \frac{G_{\text{derived}}}{G_{\text{measured}}} = 1.0021
 $$
 
-The agreement is within 0.21%, limited only by the uncertainty in the cosmic
-parameters $R_{\text{universe}}$ and $M_{\text{universe}}$.
+The numerical agreement is within 0.21%. As emphasized in the Scope note,
+this is *not* an independent measurement of $G$: the cosmic inputs
+$R_{\text{universe}}$ and $M_{\text{universe}}$ are themselves fixed within
+general-relativistic cosmology and carry $G$ implicitly (the critical-density
+condition forces $M/R$). The match should therefore be read as a Mach–Sciama
+consistency check at the cosmic scale, with the substantive content being the
+predicted prefactor $4/5$ and the mechanism, not the numerical value of $G$.
+
+### 6.1 Error Budget
+
+The central value should be quoted with the uncertainty propagated from its
+cosmic inputs, not as a bare $0.21\%$:
+
+$$
+\frac{\delta G}{G} = \sqrt{\left(\frac{\delta R}{R}\right)^2 + \left(\frac{\delta M}{M}\right)^2}.
+$$
+
+Two very different uncertainties matter:
+
+- **Measurement uncertainty (definitions of $R$, $M$ fixed).** With the
+  particle-horizon radius and the critical-density mass at Planck-level
+  precision, $\delta R/R \sim 2\%$ and $\delta M/M \sim 3\%$, giving
+  $\delta G/G \sim 4\%$, i.e. $G_{\text{derived}} = (6.7 \pm 0.3)\times10^{-11}$.
+  The measured value sits comfortably inside this band — but the band is
+  $\sim 20\times$ wider than the $0.21\%$ central offset, so the agreement is a
+  *consistency*, not a precision test.
+- **Definitional uncertainty (which $R$, which $M$).** This dominates and is far
+  larger. Hubble radius vs. particle horizon moves $R$ by tens of percent;
+  baryonic ($2.3\times10^{52}$ kg), matter ($1.5\times10^{53}$ kg), or total
+  energy ($4.7\times10^{53}$ kg) moves $M$ by a factor $\sim 20$. The prefactor
+  lands on $4/5$ only for one mutually consistent critical-density choice —
+  which is exactly the Mach–Sciama statement, and exactly why this is not an
+  independent measurement of $G$.
+
+The honest reading: $4/5$ is the prediction; the sub-percent central match is
+fortuitous given the input uncertainties; and the substantive falsifiable
+content is the discrete $4/5$-vs-$16/15$ choice (§3.3) and the $G$-free
+electron-scale test (the Empirical Anchor, §7.1).
 
 ---
 
-## 7. Independent Predictions
+## 7. Predictions and Falsifiability
 
-### 7.1 Frame Dragging
+We separate genuinely falsifiable, input-independent predictions from
+qualitative or order-of-magnitude consequences, and label each honestly.
 
-The boost generator structure (BW theorem) predicts that rotating masses drag
-the local entanglement field, creating frame dragging. The Lense-Thirring
-effect is a consequence of the modular flow being a boost rotation.
+### 7.1 Exact, $G$-free prediction: the Bohr magneton
 
-### 7.2 Gravitational Fine Structure Constant
+The sharpest falsifiable claim. The same mechanism applied at the electron
+Compton scale predicts the electron magnetic moment *exactly*,
+$\mu = e\hbar/2m_e = \mu_B = 9.274\times10^{-24}$ J/T, with no fitted parameters
+and no $G$ (Empirical Anchor; `DERIVE_EM.pdf`). Any departure of the
+Dirac-level moment from $e\hbar/2m_e$ would falsify the mechanism at its
+cleanest point; none exists.
 
-The concurrence is the gravitational coupling constant:
+### 7.2 Discriminating prediction: the cosmic prefactor is $4/5$, not $16/15$
 
-$$
-\alpha_{\text{grav}} = C = 7.40 \times 10^{-39}
-$$
+The mechanism predicts a *discrete* prefactor selected by the cosmic ensemble's
+CFT regime (§3.3): $4/5$ (low-filling) versus $16/15$ (vacuum) — a $33\%$ split.
+This is falsifiable with improved cosmology: as $R_{\text{universe}}$ and
+$M_{\text{universe}}$ tighten, the consistent prefactor must converge on $4/5$.
+Convergence toward $16/15$ or the naive Schwarzschild $1/2$ would falsify the
+low-filling identification.
 
-This is derived, not fitted.
+### 7.3 $G$-free cross-check: bond energy at the nucleon scale
 
-### 7.3 Dark Energy
+The bond energy $E_{\text{bond}} = \hbar c/r$ (§2) evaluated at the nucleon
+radius $r \approx 1$ fm gives $\approx 200$ MeV, matching $\Lambda_{\text{QCD}}$
+— a numeric, $G$-free cross-check at a scale $\sim 40$ orders of magnitude from
+the cosmic one.
 
-The unresolved entanglement field at the cosmic scale gives:
+### 7.4 Gravitational coupling (restatement, not independent)
 
-$$
-\rho_{\text{DE}} \approx 8.1 \times 10^{-11} \text{ J/m}^3
-$$
+$\alpha_{\text{grav}} = C = 5.9 \times 10^{-39}$ equals $G m_p^2/\hbar c$; it is
+a re-expression of the cosmic balance, not an independent test.
 
-consistent with the measured dark energy density.
+### 7.5 Frame dragging (qualitative)
+
+The boost-generator structure (BW theorem) implies rotating masses drag the
+local entanglement field (Lense–Thirring). At present this is structural only: a
+compactness-based estimate is off by $\sim 3\times10^3$ (`DERIVE_EM.pdf` §9.7),
+so it is not yet a quantitative prediction.
+
+### 7.6 Dark energy (order-of-magnitude)
+
+The unresolved cosmic entanglement field gives
+$\rho_{\text{DE}} \approx 8.1 \times 10^{-11}$ J/m$^3$, the right order of
+magnitude but $\sim 8\times$ below the measured
+$\rho_\Lambda \approx 6.9 \times 10^{-10}$ J/m$^3$ — a consistency check, not a
+match.
 
 ---
 
-## 8. The 4/5 Factor in Context
+## 8. Toward a Local Derivation
 
-The factor $4/5$ appears in multiple independent contexts:
+The cosmic match is a one-scale consistency check precisely because the inputs
+$R_{\text{universe}}$, $M_{\text{universe}}$ carry $G$ implicitly. The way to
+remove the circularity is a *local* derivation in the spirit of the
+Jacobson–Padmanabhan–Verlinde program, in which $G$ is fixed by a locally
+computable entanglement bond density rather than by cosmic boundary values.
 
-- **3-4-5 right triangle:** $\sin(\theta) = 4/5$ (projection ratio)
-- **Kolmogorov four-fifths law:** Exact coefficient for turbulent energy cascade
-- **Major third in just intonation:** 5:4 frequency ratio (harmonic consonance)
-- **Pareto 80/20:** Dominant share from minority of causes
+**The target relation.** Jacobson (1995) derives the Einstein equations from the
+Clausius relation $\delta Q = T\,\delta S$ on local Rindler horizons, with the
+Unruh temperature $T = \hbar a/2\pi k_B c$ and an entropy proportional to horizon
+area, $S = \eta\, k_B\, \mathcal{A}$. Newton's constant then emerges as
 
-In the entanglement context, $4/5$ means "near-wholeness without closure" --
-sufficient to carry the shape of gravity, not enough to claim the whole.
+$$
+G = \frac{c^3}{4 \hbar\, \eta},
+$$
+
+where $\eta$ is the **entanglement entropy per unit horizon area** (bonds per
+unit area). In this language, a local derivation of $G$ is exactly a calculation
+of $\eta$ from the modular Hamiltonian — *without* using $G$ as an input.
+
+**What the present mechanism contributes.** The same ingredients that fix the
+cosmic prefactor have local analogues that should determine $\eta$:
+
+1. the bond energy $E_{\text{bond}} = \kappa\,\hbar c/r$ (§2), the energy per
+   entanglement link crossing the horizon;
+2. the modular weight $\beta(r)$ (§1), which sets how links are distributed with
+   proper distance from the entangling surface;
+3. the torque/boost geometry (BW theorem), which fixes the orthogonal projection
+   that survives the isotropic average.
+
+**What is missing.** To close the loop one must compute the link density per unit
+area $\eta$ from $\beta(r)$ and $E_{\text{bond}}$ for a *local* causal horizon
+(not the cosmic sphere) and show it reproduces $G = c^3/(4\hbar\eta)$ at the
+measured value using no cosmic inputs. We do not have this calculation; neither
+does anyone else. It is the central open problem. The honest status of this paper
+is: *given a mechanism that is exact and $G$-free at the electron scale (the
+Empirical Anchor) and that fixes the cosmic prefactor (§§3–6), the missing piece
+is the local bond density $\eta$ that would turn the cosmic consistency check
+into a derivation.*
 
 ---
 
@@ -509,6 +677,10 @@ All derivations are implemented in Python scripts:
 - `derive_G.py` -- Main cosmic-Mach-Sciama prefactor calculation (752 lines)
 - `derive_bond_energy.py` -- $E_{\text{bond}} = \hbar c/r$ derivation (420 lines)
 - `derive_3d_extension.py` -- 3+1D extension via Huerta & van der Velde (350 lines)
+- `verify_symbolic.py` -- Symbolic (`sympy`) proof of the $\langle 1/r \rangle$
+  integrals, the discrete $4/5$ vs $16/15$ prefactors, and the Step A–F algebra
+  (showing $\hbar$, $m_p$, $\kappa$ cancel exactly)
 - `constants.py` -- Physical constants and helper functions
 
-All scripts run cleanly and produce consistent results.
+All scripts run cleanly and produce consistent results. The symbolic check makes
+the core arithmetic exact rather than numerical: run `python3 verify_symbolic.py`.

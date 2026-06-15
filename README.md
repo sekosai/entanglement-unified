@@ -18,7 +18,7 @@ Applied to any local causal patch (e.g., Earth) the same formula gives `G_eff ‚à
 
 | Document | Description |
 |----------|-------------|
-| [DERIVATION.pdf](DERIVATION.pdf) | Entanglement mechanism for the Mach‚ÄìSciama relation, with predicted prefactor 4/5. Includes a Circularity & Scope section, the Earth-as-patch local test, and a "Toward a Local Derivation" section. |
+| [ANSATZ.pdf](ANSATZ.pdf) | Entanglement-ansatz for the Mach‚ÄìSciama relation, with predicted prefactor 4/5. Includes a Circularity & Scope section, the Earth-as-patch local test, and a "Toward a Local Derivation" section. |
 | [DERIVE_EM.pdf](DERIVE_EM.pdf) | Bohr magneton from helical-jerk geometry: a `G`-free test of the same mechanism. |
 | [UNIFIED.pdf](UNIFIED.pdf) | Sketch across all four forces, with explicit limitations. |
 
@@ -26,7 +26,7 @@ Applied to any local causal patch (e.g., Earth) the same formula gives `G_eff ‚à
 
 | File | Description |
 |------|-------------|
-| `DERIVATION.tex` | LaTeX source for the gravity paper |
+| `ANSATZ.tex` | LaTeX source for the gravity paper |
 | `DERIVE_EM.tex` | LaTeX source for the EM paper |
 | `UNIFIED.tex` | LaTeX source for the unified sketch |
 | `references.bib` | BibTeX bibliography |
@@ -34,12 +34,13 @@ Applied to any local causal patch (e.g., Earth) the same formula gives `G_eff ‚à
 | `derive_bond_energy.py` | Bond energy `E = ‚Ñèc/r` from the modular Hamiltonian |
 | `derive_3d_extension.py` | 3+1D extension via Huerta & van der Velde |
 | `derive_unified.py` | Unified-theory companion script |
+| `verify_symbolic.py` | Symbolic (`sympy`) proof of the `<1/r>` integrals, the discrete `4/5` vs `16/15` prefactors, and the Step A‚ÄìF algebra |
 | `constants.py` | Physical constants |
 
 ## Compile
 
 ```bash
-pdflatex DERIVATION.tex && bibtex DERIVATION && pdflatex DERIVATION.tex && pdflatex DERIVATION.tex
+pdflatex ANSATZ.tex && bibtex ANSATZ && pdflatex ANSATZ.tex && pdflatex ANSATZ.tex
 pdflatex DERIVE_EM.tex && pdflatex DERIVE_EM.tex && pdflatex DERIVE_EM.tex
 pdflatex UNIFIED.tex && pdflatex UNIFIED.tex
 ```
@@ -51,6 +52,7 @@ python3 derive_G.py
 python3 derive_bond_energy.py
 python3 derive_3d_extension.py
 python3 derive_unified.py
+python3 verify_symbolic.py
 ```
 
 ## Status

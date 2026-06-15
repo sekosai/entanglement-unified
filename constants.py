@@ -3,7 +3,7 @@
 G is not hardcoded here as a fundamental input; it is computed in
 derive_G.py from the cosmic Mach-Sciama relation with the predicted
 prefactor 4/5. The value G_MEASURED below is for verification, not
-derivation. See DERIVATION.tex for the scope discussion: this is not
+ansatz. See ANSATZ.tex for the scope discussion: this is not
 a free local derivation of G, only a one-scale consistency check.
 """
 from __future__ import annotations
@@ -70,7 +70,7 @@ def nucleon_count(mass: float) -> float:
 
 
 GAMMA_PREFACTOR = 4.0 / 5.0  # forced by Racah-chain modular Hamiltonian
-                              # at low filling fraction (see DERIVATION.tex)
+                              # at low filling fraction (see ANSATZ.tex)
 
 
 def concurrence_from_cosmic(M_universe: float = M_UNIVERSE_TOTAL,

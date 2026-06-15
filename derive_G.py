@@ -6,7 +6,7 @@ trajectory + bond energy hbar*c/r) and shows that the Racah-chain
 modular Hamiltonian at low filling fraction forces gamma = 4/5.
 
 NOT a free derivation of G. The cosmic inputs R_universe and M_universe
-are themselves G-dependent in standard cosmology (see DERIVATION.tex
+are themselves G-dependent in standard cosmology (see ANSATZ.tex
 Section 'Circularity and Scope'). The substantive content is the
 prefactor 4/5 and the mechanism itself, not the numerical value of G.
 A clean G-independent test of the same mechanism (the Bohr magneton
