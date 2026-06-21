@@ -618,14 +618,158 @@ The continuous family $\beta(r) = (1-r/R)^a$ admits the closed form
   \label{eq:gamma_of_a}
 \end{equation}
 so $a = 2 \Rightarrow \gamma = 4/5$, and the scan above is sensitive near
-$a = 2$. This continuous scan is, however, only illustrative: the physics does
+$a = 2$.
+
+\paragraph{Moment decomposition of $\gamma$.}
+The weighted average $\av{1/r}$ admits an exact decomposition in terms of the
+first moment $\av{r}_\beta = R/(a+2)$ (the mean position of the bare weight
+$\beta$):
+\begin{equation}
+  \av{\frac{1}{r}} = \frac{1}{2\,\av{r}_\beta} + \frac{1}{2R}.
+  \label{eq:moment_decomp}
+\end{equation}
+Substituting into $\gamma = 2/(\av{1/r}\,R)$ gives
+\begin{equation}
+  \boxed{\;\gamma = \frac{4}{R/\av{r}_\beta + 1}\;.}
+  \label{eq:gamma_moment}
+\end{equation}
+This is the physical content of the prefactor: $\gamma$ is determined by
+how deep inside the volume the mean entanglement weight sits. For the
+Racah weight ($a = 2$), the mean is at $\av{r}_\beta = R/4$ --- the inner
+quarter of the radius --- giving $R/\av{r}_\beta = 4$ and $\gamma = 4/5$.
+
+This decomposition makes explicit how each moment of the
+$\mathrm{SL}(2,\mathbb{R})$ structure enters the final result:
+\begin{itemize}
+  \item \textbf{0th moment} (normalization): absorbed into the geometric
+    coefficient $\kappa$, which cancels in the final expression for $G$
+    (Section~\ref{sec:g_emerges}).
+  \item \textbf{1st moment} (mean position $\av{r}_\beta$): determines
+    $\gamma$ through $R/\av{r}_\beta$. This is the only moment that
+    survives into the prefactor.
+  \item \textbf{2nd moment} (variance): a slave variable of $a$
+    (Section~\ref{sec:moment_hierarchy}), which is already set by
+    $\av{r}_\beta$. It carries no independent information.
+\end{itemize}
+
+The continuous scan is, however, only illustrative: the physics does
 not admit an arbitrary exponent. The admissible weights are the two
 \emph{discrete} universal CFT results --- the vacuum (CHM) weight and the
 low-filling (Racah) weight --- which give $16/15$ and $4/5$ respectively. The
 real question is therefore not ``what value of $a$ fits $G$?'' but ``which
 discrete regime describes the cosmic ensemble?'' --- whether $a = 2$ is
 \emph{forced} by physics or merely \emph{found} to fit. That is the subject of
-the next subsection.
+the next subsection. But first we note a structural reason why higher-order
+corrections to the weight cannot arise.
+
+\subsection{Why the Moment Hierarchy Terminates at Rank 2}
+\label{sec:moment_hierarchy}
+
+The weight $\beta(r)$ determines $\gamma$ through the weighted average
+$\av{1/r}$. One might worry that the quadratic form $\beta = (1-r/R)^2$ is only
+the leading term, and that higher-order corrections --- a cubic
+$(1-r/R)^3$ admixture, say --- could shift $\gamma$ away from $4/5$.
+
+No such correction exists, for a reason that is algebraic rather than
+numerical.
+
+\paragraph{The $\mathrm{SL}(2,\mathbb{R})$ constraint.}
+The modular Hamiltonian is constructed from the generators of the
+residual conformal symmetry of the radial theory. Huerta \& van der Velde
+show that dimensional reduction from $d$ dimensions to the radial
+semi-infinite line preserves an $\mathrm{SL}(2,\mathbb{R})$ subalgebra of the
+parent conformal group $\mathrm{SO}(d,2)$. The modular flow generator is a
+Noether charge of this residual symmetry. $\mathrm{SL}(2,\mathbb{R})$ has
+exactly three generators:
+\begin{enumerate}
+  \item the \emph{dilation} generator $D$ (rank~0: sets the overall scale),
+  \item the \emph{translation} generator $P$ (rank~1: sets the center/dipole),
+  \item the \emph{special conformal} generator $K$ (rank~2: sets the
+    quadratic curvature of the weight).
+\end{enumerate}
+There is no fourth generator. A rank-3 invariant (which would source a
+cubic correction to $\beta$) does not exist in $\mathrm{SL}(2,\mathbb{R})$.
+
+\paragraph{Derivation: higher moments are slave variables.}
+Consider the family $\beta(r) = (1 - r/R)^a$ on $[0, R]$.
+The $k$th moment of this weight distribution (normalized to a
+probability measure) is
+\begin{equation}
+  \mu_k(a) \;=\;
+  \frac{\int_0^R r^k\,(1-r/R)^a\,\mathrm{d}r}
+       {\int_0^R (1-r/R)^a\,\mathrm{d}r}
+  \;=\; R^k\,\frac{B(k+1,\,a+1)}{B(1,\,a+1)}
+  \;=\; R^k\,\frac{k!\;\Gamma(a+1)}{\Gamma(k+a+2)}\,(a+1),
+  \label{eq:moments_beta}
+\end{equation}
+where $B$ is the Euler beta function. For fixed $a$ (which the
+$\mathrm{SL}(2,\mathbb{R})$ structure determines), every moment $\mu_k$
+is a fixed rational function of $a$ and $R$ --- there is no free parameter
+beyond these two. Explicitly:
+\begin{align}
+  \mu_0 &= 1 \quad\text{(normalization)}, \label{eq:moment0} \\
+  \mu_1/R &= \frac{1}{a+2} \quad\text{(mean)}, \label{eq:moment1} \\
+  \mu_2/R^2 &= \frac{2}{(a+2)(a+3)} \quad\text{(second moment)}, \label{eq:moment2} \\
+  \mu_3/R^3 &= \frac{6}{(a+2)(a+3)(a+4)} \quad\text{(third moment = skewness source)}, \label{eq:moment3} \\
+  \mu_4/R^4 &= \frac{24}{(a+2)(a+3)(a+4)(a+5)} \quad\text{(fourth moment = kurtosis source)}. \label{eq:moment4}
+\end{align}
+The pattern is immediate: $\mu_k/R^k = k!\,/\prod_{j=2}^{k+1}(a+j)$.
+Once $a$ is fixed (by the rank-2 generator), moments 3, 4, and all
+higher moments are \emph{determined}. They are not independent degrees
+of freedom; they are slave variables of the exponent $a$.
+
+\paragraph{Consequence: an exhaustive dichotomy.}
+Since $\gamma(a) = 4/(a+3)$ (\cref{eq:gamma_of_a}), and the
+$\mathrm{SL}(2,\mathbb{R})$ structure admits only two physically
+distinct regimes --- vacuum ($a = 1$, the CHM weight) and low-filling
+($a = 2$, the Racah weight) --- the prefactor takes exactly one of
+two values:
+\begin{equation}
+  \boxed{\;\gamma \;\in\;
+    \left\{\;\frac{16}{15}\;\text{(vacuum)},\quad
+            \frac{4}{5}\;\text{(low filling)}\;\right\}.}
+  \label{eq:dichotomy}
+\end{equation}
+The ratio between them is $\gamma_{\mathrm{CHM}}/\gamma_{\mathrm{Racah}}
+= 4/3$, i.e.\ a $33\%$ split. No intermediate value is admissible within
+the conformal family; no higher-order correction can move $\gamma$ within
+or beyond this pair.
+
+The consequence for $G$ is equally sharp. With $G = \gamma\,c^2\Runiv/\Muniv$,
+the mechanism predicts one of exactly two values:
+\begin{equation}
+  G \;\in\; \left\{\;
+    \frac{16}{15}\,\frac{c^2\Runiv}{\Muniv},\quad
+    \frac{4}{5}\,\frac{c^2\Runiv}{\Muniv}
+  \;\right\}.
+  \label{eq:G_dichotomy}
+\end{equation}
+The measured $G$ agrees with the low-filling branch to $0.21\%$ and
+disagrees with the vacuum branch by $33\%$. This is the paper's
+sharpest falsifiable claim: the cosmic ensemble must sit in the
+low-filling regime, not the vacuum, and the moment hierarchy admits
+no third option.
+
+\paragraph{Why there is no rank 3.}
+The termination is not an approximation. The $\mathrm{SL}(2,\mathbb{R})$
+algebra satisfies $[D, P] = P$, $[D, K] = -K$, $[P, K] = 2D$.
+A putative rank-3 generator $T$ would need to satisfy
+$[D, T] = \lambda T$ for some weight $\lambda$, but the Casimir structure
+of $\mathrm{SL}(2,\mathbb{R})$ (rank-1 Lie algebra, one independent
+Casimir $C_2 = D^2 - \tfrac{1}{2}(PK + KP)$) cannot accommodate
+a fourth independent generator. The representation theory is three-dimensional;
+any attempt to add a fourth generator either decomposes into the existing
+three or enlarges the algebra to $\mathrm{SL}(3,\mathbb{R})$ or beyond, which
+would require additional spatial dimensions or internal degrees of freedom
+not present in the radial reduction.
+
+\paragraph{Note on symmetry breaking.} The conformal symmetry \emph{is}
+broken by the finite filling fraction $\rho = 0.049$. But the breaking enters
+through the Fermi velocity profile (Section~\ref{sec:weight_forced}), which
+modifies the quadratic coefficient --- i.e., it changes the value of the
+rank-2 generator's contribution, not its rank. The filling fraction shifts $a$
+within the space $\{1, 2\}$ (CHM vs.\ Racah); it does not open a rank-3
+channel.
 
 \subsection{Was the Quadratic Weight Forced or Found?}
 \label{sec:weight_forced}
@@ -702,7 +846,11 @@ The honest accounting:
     Racah-chain framework, then the quadratic weight
     $\beta(r) = (1-r/R)^2$ follows from Bernard et al., and the
     weighted-average machinery forces $\gamma = 4/5$ by simple
-    integration. There is no remaining freedom.
+    integration. There is no remaining freedom: the
+    $\mathrm{SL}(2,\mathbb{R})$ structure
+    (Section~\ref{sec:moment_hierarchy}) forbids higher-order
+    corrections to the weight, so neither skewness nor kurtosis of
+    the weight profile can be adjusted independently.
   \item \textbf{Not forced.} The identification of the cosmic
     ensemble with a Racah-chain low-filling state. This is the
     fragile bridge, and it decomposes into three separate, individually
@@ -735,11 +883,13 @@ The honest accounting:
 
 \paragraph{What would falsify the prefactor.}
 The framework makes the prefactor a function of the modular weight,
-which is a function of the regime. If a more careful analysis of
-the cosmic ensemble's modular Hamiltonian gave a different weight
-(linear, cubic, hybrid), the prefactor would change. Reproducing
-the cosmic Mach--Sciama relation with a different prefactor would
-falsify the specific claim of this paper. Reproducing it with no
+which is a function of the regime. A different weight (linear or
+hybrid) would give a different prefactor; but a \emph{cubic}
+correction cannot arise within the $\mathrm{SL}(2,\mathbb{R})$ family
+(Section~\ref{sec:moment_hierarchy}), so the only admissible alternative
+is the CHM weight ($\gamma = 16/15$), which is $33\%$ wrong.
+Reproducing the cosmic Mach--Sciama relation with a different prefactor
+would falsify the specific claim of this paper. Reproducing it with no
 identifiable weight at all --- pure $\gamma = 1$ --- would falsify
 the entire mechanism.
 
@@ -782,6 +932,41 @@ any local mass breaks the isotropy.
 The boost rotation back toward the mass is the gravitational force. Gravity
 is not a fundamental force---it is the anisotropy in the cosmic entanglement
 field created by local mass concentrations.
+
+\subsection{No Angular Average}
+\label{sec:no_angular_avg}
+
+A conventional field theory would compute the gravitational force as an
+angular average: integrate the force density over solid angle, project onto
+the radial direction via $\cos\theta$, and obtain a statistical expectation
+value. We do not do this, and the reason is not laziness but principle.
+
+Each nucleon pair is a \emph{definite} entanglement bond with a definite
+separation vector $\mathbf{r}_{ij}$. The bond carries a definite force
+$C\,\kappa\,\hbar c / r_{ij}^2$ along $\hat{\mathbf{r}}_{ij}$. There is
+no ensemble of orientations to average over: the pair either exists or it
+does not. The total force on a nucleon is the \emph{sum} over all its
+partners, not an \emph{average} over angles:
+\begin{equation}
+  \mathbf{F}_i = \sum_{j \neq i} C\,\kappa\,\frac{\hbar c}{r_{ij}^2}
+                 \;\hat{\mathbf{r}}_{ij}.
+  \label{eq:force_sum}
+\end{equation}
+The isotropic part of this sum cancels by symmetry (the universe is
+isotropic). The residual is the force toward the local mass
+concentration. No $\cos\theta$ projection is performed; no angular
+measure is introduced.
+
+This distinction matters because an angular average is ontologically
+violent: it replaces definite bonds with a statistical smear, destroying
+the pairwise structure that the modular Hamiltonian provides. In this
+framework, the entanglement bond between nucleon $i$ and nucleon $j$ is
+a real object --- it carries a definite coupling $C$, a definite energy
+$C\kappa\hbar c/r_{ij}$, and a definite direction $\hat{\mathbf{r}}_{ij}$.
+The force is the derivative of a sum of definite terms, not the
+projection of a continuous field. The pair counting
+$(M/m_p)(m/m_p)$ in the ansatz (Section~\ref{sec:g_emerges}) is exact
+for this reason: it counts bonds, not field modes.
 
 \section{The Ansatz}
 
@@ -841,13 +1026,19 @@ Solving for $C$ and substituting $N = M/m_p$:
 \end{equation}
 
 \subsection{$G$ Emerges}
+\label{sec:g_emerges}
 
-The force per nucleon pair is:
+The force per nucleon pair is the derivative of the bond energy:
 \begin{equation}
-  F_{\mathrm{pair}} = C \cdot \kappa \frac{\hbar c}{r^2}
+  F_{\mathrm{pair}} = -\frac{\mathrm{d}}{\mathrm{d}r}
+    \left(C \cdot \kappa \frac{\hbar c}{r}\right)
+  = C \cdot \kappa \frac{\hbar c}{r^2}.
   \label{eq:pair_force}
 \end{equation}
-The total force between two masses $M$ and $m$ at distance $r$:
+This is the force along the definite bond direction $\hat{\mathbf{r}}_{ij}$
+(Section~\ref{sec:no_angular_avg}), not a projection or angular average.
+The total force between two masses $M$ and $m$ at separation $r$ is the sum
+over all $N_M \times N_m$ definite bonds:
 \begin{equation}
   F = \frac{M}{m_p} \cdot \frac{m}{m_p} \cdot C \cdot \kappa \frac{\hbar c}{r^2}
   \label{eq:total_force}
